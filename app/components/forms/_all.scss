@@ -1,0 +1,78 @@
+@import "../../assets/styles/settings/all"; 
+
+/*----------  Forms  ----------*/
+form{
+  .page-overlay & {
+    margin: 25px 0;
+  }
+
+  button{
+    margin-top: 20px;
+  }
+}
+.form-group{
+  margin-bottom: 15px;
+  input, select, textarea{
+    border: 1px solid $border-color-light;
+    padding: 12px 15px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 0;
+    width: 100%;
+    display: block;
+    color: palette(text, default);
+    height: auto;
+    min-height: 54px;
+    box-sizing: border-box;
+    margin: 0 0;
+
+    @include placeholder {
+      color: palette(text, light);
+    }
+  }
+
+  textarea{
+    &:not(.browser-default){
+      min-height: 120px;
+    }
+  }
+}
+
+.form-message{
+  margin-bottom: -50px;
+  display: none;
+  padding: 35px 0;
+}
+
+.form-title{
+  font-family: $font-secondary;
+  margin: 36px 0;
+  font-weight: bold;
+  font-size: em(20);
+  display: inline-block;
+  width: 100%;
+}
+
+@import "variables", "validations", "form-lined", "selects";
+
+
+/*----------  Custom  ----------*/
+.newsletter{
+  form{
+    max-width: 372px;
+    width: 100%;
+    margin: 0 auto;
+    
+    button{
+      padding: 20px;
+    }
+  }
+
+  @include max-screen($start-mobile) {
+    .section.is-large{
+      padding: 0px 0;
+    }
+  }
+
+}

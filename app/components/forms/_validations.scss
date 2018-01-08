@@ -1,0 +1,44 @@
+/*----------  Validations  ----------*/
+.form-control-danger, .form-control-success, .form-control-warning {
+  padding-right: 2.25rem;
+}
+.form-group{
+  &.has-error{
+    @include form_fields{
+      @extend .form-control-danger;
+      border-color: palette(stage, danger);
+      box-shadow: none;
+
+      &:focus{
+        box-shadow: none;
+        border-color: palette(stage, danger);
+      }
+    }
+
+    .radio, .chackbox{
+      position: relative;
+      .help-block{
+        position: absolute;
+        top: -25px;
+        left: 0;
+      }
+    }
+
+    .help-block{
+      color: palette(stage, danger);
+      font-size: 13px;
+    }
+  }
+
+  &.has-success{
+    @include form_fields {
+      @extend .form-control-success;
+      border-color: palette(stage, success);
+    }
+
+    .help-block{
+      color: palette(stage, success);
+    }
+  }
+
+}//.form-group

@@ -1,0 +1,61 @@
+.banner{
+
+  .grid{
+    @include gridbs(6px);
+
+    @include min-screen(800px) {
+      @include gridbs(12px);
+    }
+
+    @include min-screen(1300px) {
+      @include gridbs(24px);
+    }
+
+    >*[class*=col] {
+      &:last-child{
+        .slick-dots{
+          left: 30px;
+        }
+      }
+    }
+
+    @include e('item') {
+      position: relative;
+      overflow: hidden;
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+
+      & + *{
+        margin-top: 48px;
+      }
+
+      .slide{
+        width: 100%;
+      }
+
+      .slick-slide {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      @include m('v') {
+        height: 86vh;
+
+        .slick-slide{
+          min-height: 86vh;
+        }
+      }
+
+      @include m('h1x') {
+        height: calc(32vh - 24px);
+      }
+
+      @include m('h2x') {
+        height: calc(54vh - 24px);
+      } 
+
+    }
+  }
+}

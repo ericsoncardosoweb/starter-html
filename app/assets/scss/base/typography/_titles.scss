@@ -1,0 +1,34 @@
+.section-title{
+  position: relative;
+  z-index: 2;
+  min-height: 84px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px 10px;
+  color: palette(brand, primary);
+  font-weight: bold;
+  font-family: $font-secondary;
+  @extend .fz-30;
+  margin: 15px 0 30px;
+
+  &:before{
+    content: none;
+  }
+
+
+  .effect{
+    color: #fafafa;
+    font-family: $font-primary;
+    font-size: rem(150px);
+    font-weight: 900;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

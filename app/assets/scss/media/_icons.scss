@@ -1,0 +1,102 @@
+@font-face {
+	font-family: "Icons";
+	src: url('fonts/Icons.eot');
+	src: url('fonts/Icons.eot?#iefix') format('eot'),
+		url('fonts/Icons.woff2') format('woff2'),
+		url('fonts/Icons.woff') format('woff'),
+		url('fonts/Icons.ttf') format('truetype'),
+		url('fonts/Icons.svg#Icons') format('svg');
+}
+
+.icon:before {
+	font-family: "Icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.icon-arrow-down:before {
+	content: "\E001";
+}
+
+.icon-bag:before {
+	content: "\E002";
+}
+
+.icon-chevron-down:before {
+	content: "\E003";
+}
+
+.icon-chevron-left:before {
+	content: "\E004";
+}
+
+.icon-chevron-right:before {
+	content: "\E005";
+}
+
+.icon-chevron-up:before {
+	content: "\E006";
+}
+
+.icon-circle:before {
+	content: "\E007";
+}
+
+.icon-close:before {
+	content: "\E008";
+}
+
+.icon-envelop:before {
+	content: "\E009";
+}
+
+.icon-facebook:before {
+	content: "\E00A";
+}
+
+.icon-heart:before {
+	content: "\E00B";
+}
+
+.icon-instagram:before {
+	content: "\E00C";
+}
+
+.icon-menu:before {
+	content: "\E00D";
+}
+
+.icon-mouse:before {
+	content: "\E00E";
+}
+
+.icon-pinterest:before {
+	content: "\E00F";
+}
+
+.icon-search:before {
+	content: "\E010";
+}
+
+.icon-star:before {
+	content: "\E011";
+}
+
+.icon-twitter:before {
+	content: "\E012";
+}
+
+.icon-user:before {
+	content: "\E013";
+}
+
+.icon-template.html:before {
+	content: "\E014";
+}

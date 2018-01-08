@@ -1,0 +1,161 @@
+.animated.button {
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  z-index: 1;
+  .content {
+    will-change: transform, opacity;
+  }
+  .content--visible {
+    position: relative;
+    margin-right: 1.5em;
+  }
+  .content--hidden {
+    position: absolute;
+    width: 100%;
+  }
+  .content--visible, .content--hidden {
+    transition: right 0.3s ease 0s;
+  }
+  .content--visible {
+    left: auto;
+    right: 0%;
+  }
+  .content--hidden {
+    top: 50%;
+    left: auto;
+    right: -100%;
+    margin-top: -0.5em;
+    
+    > div {
+      transform: translateY(-12%);
+      transition: 0.3s;
+    }
+  }
+  
+  &:not(.toggle){
+    &:focus .content--visible, &:hover .content--visible {
+      left: auto;
+      right: 200%;
+    }
+    &:focus .content--hidden, &:hover .content--hidden {
+      left: auto;
+      right: 0%;
+    }
+  }
+
+  &.toggle{
+    &.active .content--visible {
+      left: auto;
+      right: 200%;
+    }
+    &.active .content--hidden {
+      left: auto;
+      right: 0%;
+      overflow: initial;
+
+    }
+  }
+
+  /* Vertical */
+  &.vertical {
+    .content--visible, .content--hidden {
+      transition: top 0.3s ease, transform 0.3s ease;
+    }
+    .content--visible {
+      transform: translateY(0%);
+      right: auto;
+    }
+    .content--hidden {
+      top: -50%;
+      left: 0%;
+      right: auto;
+    }
+    
+    &:not(.toggle){
+      &:focus .content--visible, &:hover .content--visible {
+        transform: translateY(200%);
+        right: auto;
+      }
+      &:focus .content--hidden, &:hover .content--hidden {
+        top: 50%;
+        right: auto;
+      }
+    }
+
+    &.toggle{
+      &.active .content--visible {
+        transform: translateY(200%);
+        right: auto;
+      }
+      &.active .content--hidden {
+        top: 50%;
+        right: auto;
+      }
+    }
+  }
+
+  /* Fade */
+  &.fade { 
+    opacity: 1;
+
+    .content--visible, .content--hidden {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .content--visible {
+      left: auto;
+      right: auto;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .content--hidden {
+      opacity: 0;
+      left: 0%;
+      right: auto;
+      transform: scale(1.5);
+    }
+
+    &.toggle{
+      &.active .content--visible {
+        left: auto;
+        right: auto;
+        opacity: 0;
+        transform: scale(0.75);
+      }
+      &.active .content--hidden {
+        left: 0%;
+        right: auto;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+  
+}//.animated.button
+
+.ripple{
+  overflow: hidden;
+  position: relative;
+}
+
+.ripple-effect{
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;    
+  animation: ripple-animation 2s;
+  cursor: pointer;
+}
+
+
+@keyframes ripple-animation {
+    from {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    to {
+      transform: scale(100);
+      opacity: 0;
+    }
+}

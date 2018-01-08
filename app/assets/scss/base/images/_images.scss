@@ -1,0 +1,70 @@
+img:not(.is-original){
+	max-width: 100%;
+	height: auto;
+	display: inline-block;
+}
+
+.image-rounded {
+	width: 175px;
+	height: 175px;
+	border-radius: 100%;
+	overflow: hidden;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	position: relative;
+
+	img{
+		@include absolute_centered();
+		max-width: 110%;
+		max-height: 110%;
+		width: auto;
+		height: auto;
+	}
+
+	&.image-outline{
+		border-radius: 100%;
+		overflow: inherit;
+
+		&:before{
+			border-radius: 100%;
+		}
+
+		> *{
+			display: block;
+			overflow: hidden;
+			border-radius: 100%;
+		}
+	}
+}
+
+.image-outline {
+	position: relative;
+	display: block;
+
+	&:before{
+		content: "";
+		display: block;
+		width: calc(100% + 18px);
+		height: calc(100% + 18px);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 1px solid palette(brand, primary);
+	}
+}
+
+.text-center, .center{
+	.image-rounded, .image-outline{
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.img-cover{
+	@include absolute_centered();
+	z-index: 1;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: inherit;
+}

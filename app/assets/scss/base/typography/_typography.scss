@@ -1,0 +1,11 @@
+body {
+  font-family: $preferred_font;
+  font-size: $font-size;
+  line-height: $font-lh;
+  font-weight: $font-w;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $primary-text-color;
+  background: $bg-body;
+}

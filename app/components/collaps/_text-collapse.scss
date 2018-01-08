@@ -1,0 +1,68 @@
+.text-collapse{
+  height: 170px;
+  overflow: hidden;
+  transition: all 0.7s;
+  position: relative;
+
+  &:not(.active){
+    height: 170px!important;
+  }
+
+  &.text-collapse--md{
+    height: 220px;
+    &:not(.active){
+      height: 220px!important;
+    }
+  }
+  &.text-collapse--lg{
+    height: 300px;
+    &:not(.active){
+      height: 300px!important;
+    }
+  }
+
+  &:after{
+    content: "";
+    height: 130px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    background-image: linear-gradient(to top, #FFF 40%, rgba(#FFF, 0.7) 75%, transparent);
+  }
+
+  .text-collapse__body{
+    padding-bottom: 60px;
+  }
+
+  > button{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    margin: 0 auto 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    transition: all 0.5s;
+  }
+
+  &.active{
+    height: auto;
+
+    &:after{
+      display: none;
+    }
+
+    >button{
+      span{display: none;}
+      i, svg{
+        transform: scale(1,-1);
+      }
+    }
+  }
+
+}

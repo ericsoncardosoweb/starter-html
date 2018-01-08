@@ -1,0 +1,517 @@
+/**
+ * Mixins do Tema
+ *
+ *
+**/
+
+/*  Padrão BEM
+========================================================================== */
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+/// @alias element
+@mixin e($element) {
+    @include element($element)  {
+        @content;
+    }
+}
+
+/// @alias modifier
+@mixin m($modifier) {
+    @include modifier($modifier) {
+        @content;
+    }
+}
+
+/*  Clearfix
+========================================================================== */
+@mixin clearfix() {
+    .ie7 & { zoom:1 }
+
+    &:before,
+    &:after {
+        content:"";
+        display: table; 
+    }
+    &:after {
+        clear:both;
+    }
+}
+
+/*  Animation
+========================================================================== */
+@mixin animation($parameters...) {
+    -webkit-animation: $parameters;
+       -moz-animation: $parameters;
+        -ms-animation: $parameters;
+         -o-animation: $parameters;
+            animation: $parameters;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @-o-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+/*  Transform
+========================================================================== */
+@mixin transform($parameters) {
+    -webkit-transform: $parameters;
+       -moz-transform: $parameters;
+         -o-transform: $parameters;
+        -ms-transform: $parameters;
+            transform: $parameters;
+}
+
+@mixin transform-origin($valueX, $valueY) {
+    -webkit-transform-origin: $valueX $valueY;
+       -moz-transform-origin: $valueX $valueY;
+         -o-transform-origin: $valueX $valueY;
+        -ms-transform-origin: $valueX $valueY;
+            transform-origin: $valueX $valueY;
+}
+
+@mixin perspective($value) {
+    -webkit-perspective: $value;
+       -moz-perspective: $value;
+        -ms-perspective: $value;
+         -o-perspective: $value;
+            perspective: $value;
+}
+
+/*  Background-size
+========================================================================== */
+@mixin background-size($value) {
+    -webkit-background-size: $value;
+       -moz-background-size: $value;
+         -o-background-size: $value;
+            background-size: $value;
+}
+
+/*  Gradients
+========================================================================== */
+@mixin gradient($value...){
+background: transparent;
+background:    -moz-linear-gradient($value);
+background:        -webkit-gradient($value);
+background: -webkit-linear-gradient($value);
+background:      -o-linear-gradient($value);
+background:     -ms-linear-gradient($value);
+background:         linear-gradient($value);
+}
+
+/*  Vertical gradient
+========================================================================== */
+@mixin simple-vertical-gradient($startColor, $endColor) {
+    background-color: $startColor;
+    background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background: -webkit-linear-gradient(top, $startColor, $endColor);
+    background:    -moz-linear-gradient(top, $startColor, $endColor);
+    background:     -ms-linear-gradient(top, $startColor, $endColor);
+    background:      -o-linear-gradient(top, $startColor, $endColor);
+    background:         linear-gradient(to bottom, $startColor, $endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$startColor}', EndColorStr='#{$endColor}');
+}
+
+@mixin vertical-gradient($bgColor, $colors...) {
+    background: -webkit-linear-gradient(top, $colors) $bgColor;
+    background:    -moz-linear-gradient(top, $colors) $bgColor;
+    background:      -o-linear-gradient(top, $colors) $bgColor;
+    background:     -ms-linear-gradient(top, $colors) $bgColor;
+    background:         linear-gradient(to bottom, $colors) $bgColor;
+}
+
+/*  Horizontal Gradient
+========================================================================== */
+@mixin simple-horizontal-gradient($startColor, $endColor) {
+    background-color: $startColor;
+    background: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+    background: -webkit-linear-gradient(left, $startColor, $endColor);
+    background:    -moz-linear-gradient(left, $startColor, $endColor);
+    background:     -ms-linear-gradient(left, $startColor, $endColor);
+    background:      -o-linear-gradient(left, $startColor, $endColor);
+    background:         linear-gradient(to right, $startColor, $endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$startColor}', EndColorStr='#{$endColor}');
+}
+
+@mixin horizontal-gradient($bgColor, $colors...) {
+    background: -webkit-linear-gradient(left, $colors) $bgColor;
+    background:    -moz-linear-gradient(left, $colors) $bgColor;
+    background:      -o-linear-gradient(left, $colors) $bgColor;
+    background:     -ms-linear-gradient(left, $colors) $bgColor;
+    background:         linear-gradient(to right, $colors) $bgColor;
+}
+
+/*  Columns
+========================================================================== */
+@mixin column($count, $gap, $line:'') {
+    -webkit-column-count: $count;
+       -moz-column-count: $count;
+            column-count: $count;
+
+    -webkit-column-gap: $gap;
+       -moz-column-gap: $gap;
+            column-gap: $gap;
+
+    @if $line != '' {
+    -webkit-column-rule: $line;
+       -moz-column-rule: $line;
+            column-rule: $line;
+    }
+}
+
+
+// FontAwesome
+@mixin fonticon($content: '\f005') {
+    content: $content;
+    font: normal normal normal 2em/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+}
+ 
+// Flaticon
+@mixin flaticon($content) {
+    content: $content;
+    font: normal normal normal 2em/1 Flaticon;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+}
+
+// Icomoon
+@mixin icomoon($content) {
+    content: $content;
+    font: normal normal normal 2em/1 icomoon;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+}
+
+// arrow
+@mixin arrow($icon) {
+    font-family: 'arrows' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+
+    $content: "\e900"; 
+
+    @if $icon == up {
+      $content: "\e903";
+    } @else if $icon == left  {
+      $content: "\e901";      
+    } @else if $icon == right  {
+      $content: "\e902";
+    } @else {
+      $content: "\e900";
+    }
+    content: $content;
+}
+
+// Positions
+@mixin absolute_all() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin absolute_centered() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute_vcentered() {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+@mixin absolute_hcentered() {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// highlight
+@function highlight($color, $amount, $threshold: 50%){
+  @if lightness($color) > $threshold{
+    @return darken($color, $amount);
+  }
+  @if lightness($color) <= $threshold{
+    @return lighten($color, $amount);
+  }
+  @return $color;
+}
+
+@mixin hoverActiveFocus() {
+    &:hover, &:active, &:focus {
+        @content;
+    }
+}
+
+// Paceholder
+@mixin placeholder {
+
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+
+// Selection
+@mixin selection($current-selector: false) {
+
+  @if $current-selector {
+    &::-moz-selection {
+      @content;
+    }
+
+    &::selection {
+      @content;
+    }
+  } @else {
+    ::-moz-selection {
+      @content;
+    }
+
+    ::selection {
+      @content;
+    }
+  }
+} 
+
+// Campos do Formulário
+@mixin form_fields {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="color"],
+  select, textarea, .form-control{
+    @content;
+  }
+}
+
+@mixin hardware($backface: true, $perspective: 1000) {
+  @if $backface {
+      backface-visibility: hidden;
+  }
+  perspective: $perspective;
+}
+
+// Mixins para media querys
+@mixin max-screen($max){
+  @media only screen and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin min-screen($min){
+  @media only screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin custom-device($min, $max){
+  @include mq($media-type: 'all', $min-width: $min, $max-width: $max) {
+    @content;
+  }
+} // @include custom-device(500px, 1000px){}
+
+@mixin fontsize($size:1.6, $line: $size * 1.5){
+  font-size:   ($size * 10) + px;
+  line-height: ($line * 10) + px;
+  font-size:   $size + rem;
+  line-height: $line + rem;
+}
+
+@mixin triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+@mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin gridbs($val) {
+  .row, &{
+    margin-left: -$val;
+    margin-right: -$val;
+
+    > *{
+      padding-left: $val;
+      padding-right: $val;
+    }
+  }
+  
+}
+
+
+@mixin section($val) {
+  .section{
+    padding-top: $val;
+    padding-bottom: $val;
+
+    &.is-small{
+      padding-top: $val / 2;
+      padding-bottom: $val / 2;
+    }
+
+    &.is-medium{
+      padding-top: $val * 2;
+      padding-bottom: $val * 2;
+    }
+
+    &.is-large{
+      padding-top: $val * 4;
+      padding-bottom: $val * 4;
+
+      @include max-screen(1000px){
+        padding-top: $val * 3;
+        padding-bottom: $val * 3;
+      }
+    }
+
+  }
+
+  .section-top{
+    padding-top: $val;
+
+    &.is-small{
+      padding-top: $val / 2;
+    }
+
+    &.is-medium{
+      padding-top: $val * 2;
+    }
+
+    &.is-large{
+      padding-top: $val * 4;
+
+      @include max-screen(1000px){
+        padding-top: $val * 3;
+      }
+    }
+
+  }
+
+  .section-bottom{
+    padding-bottom: $val;
+
+    &.is-small{
+      padding-bottom: $val / 2;
+    }
+
+    &.is-medium{
+      padding-bottom: $val * 2;
+    }
+
+    &.is-large{
+      padding-bottom: $val * 4;
+
+      @include max-screen(1000px){
+        padding-bottom: $val * 3;
+      }
+    }
+
+  }
+
+
+}
+
+@mixin textstroke($val:0.35px) {
+  -webkit-text-stroke: $val currentColor;
+  text-stroke: $val currentColor;
+}
+
+@mixin linkreset() {
+  a{
+    &, &:hover, &:active, &:visited{
+      text-decoration: none;
+      font-weight: inherit;
+      color: inherit;        
+    }
+  }
+}

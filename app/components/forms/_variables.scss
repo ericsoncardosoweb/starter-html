@@ -1,0 +1,24 @@
+// Font Sizes
+$md-font-size: 12px !default;
+$md-active-font-size: $md-font-size * 0.8 !default;
+$md-active-top: -$md-font-size !default;
+
+// Margin & Paddings
+$md-gap: $md-font-size * 1.5 !default;
+$md-spacer: $md-font-size / 8 !default;
+$md-fieldset-margin: 0 0 $md-gap * 2 !default;
+$md-checkbox-gap: $md-font-size * 2 !default;
+$md-checkbox-top: 0 !default;
+$md-radio-margin: $md-font-size / -4 !default;
+
+// Colors
+$md-input-color: $primary-text-color !default;
+$md-border-color: #999 !default;
+$md-border-color-light: $border-color !default;
+$md-label-color: lighten($md-border-color, 10%) !default;
+$md-active-color: darken($md-border-color, 10%) !default;
+$md-focus-color: palette(brand, primary) !default;
+$md-error-color: #d9534f !default;
+
+// Animation
+$md-transition-speed: 0.28s !default;

@@ -1,0 +1,102 @@
+@import "../../assets/styles/settings/all";
+
+/**
+ *
+ * Como base de um framework todo componente deve ter  o prefixo 'ui'
+ * Para fim de evitar conflitos e distorções.
+ *
+ * Elementos originais devem ser resetados para evitar interferências dos browsers
+ *
+*/
+
+button, input[type=submit], input[type=reset], input[type=button]{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border: 0;
+  box-shadow: none;
+  line-height: inherit;
+  font-size: inherit;
+  background:transparent;
+  cursor: pointer;
+
+  &:focus, &:active, &:hover{
+    border: 0;
+    outline: none!important;
+    box-shadow: none;
+  }
+
+  &:disabled{
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  *{
+    cursor: inherit;
+  }
+}
+
+/*
+ *
+ * Buttons Variables
+ *
+*/
+// *Sizes
+$btn-fz: 15px;
+$btn-fz-xsmall: 10px;
+$btn-fz-small: 12px;
+$btn-fz-tiny: 13px;
+$btn-fz-medium: 16px;
+$btn-fz-large: 18px;
+$btn-fz-xlarge: 20px;
+$btn-fz-xxlarge: 24px;
+$btn-fz-big: 28px;
+$btn-fz-huge: 38px;
+
+$btnsizes: (
+  "default": $btn-fz,
+  "xsmall": $btn-fz-xsmall,
+  "small": $btn-fz-small,
+  "tiny": $btn-fz-tiny,
+  "medium": $btn-fz-medium,
+  "large": $btn-fz-large,
+  "xlarge": $btn-fz-xlarge,
+  "xxlarge": $btn-fz-xxlarge,
+  "big": $btn-fz-big,
+  "huge": $btn-fz-huge,
+);
+
+$btn-ff: $font-secondary;
+
+$btn-bd: 0px;
+$btn-bd-radius: 0px;
+
+$btncolors: (
+  "primary": palette(brand, primary),
+  "secondary": palette(brand, secondary),
+  "contrast": palette(brand, contrast),
+  "accent": palette(brand, accent),
+  "hightlight": palette(brand, hightlight),
+  "success": palette(stage, success),
+  "danger": palette(stage, danger),
+  "info": palette(stage, info),
+  "warning": palette(stage, warning),
+  "facebook": $color-facebook,
+  "twitter": $color-twitter,
+  "whatsapp": $color-whatsapp,
+);
+
+// Imports
+@import "buttons";
+@import "animated";
+@import "outlined";
+
+/*----------  Custom bootstrap  ----------*/
+.btn{
+  &.btn-primary{
+    background: palette(brand, primary)!important;
+    border: 0;
+  }
+}

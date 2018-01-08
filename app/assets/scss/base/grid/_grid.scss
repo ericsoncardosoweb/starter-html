@@ -1,0 +1,81 @@
+/*  ==========================================================================
+  Grid - Layout
+========================================================================== */
+body, *{
+  box-sizing: border-box;
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+
+body{
+  background: #FFF;
+}
+
+section, .container{
+  position: relative;
+  z-index: 2;
+}
+
+.row{
+  &.is-small{
+    @include gridbs(7px);
+  }
+
+  &.is-medium{
+    @include gridbs(18px);
+  }
+
+  &.is-large{
+    @include gridbs(24px);
+  }
+
+  &.not-gutter{
+    @include gridbs(0px);
+  }
+
+  &[class*='middle-']{
+    align-items: center;
+  }
+
+  .col-auto{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &.blocks{
+    margin: 0 0;
+    @include gridbs(5px);
+
+    > *{
+      margin: 5px 0;
+    }
+
+    a, img{
+      display: block;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+
+  @include m('split') {
+    .bg-cover{
+      min-width: 100vw;
+    }
+
+    @include e('left') {
+      position: relative;
+      .bg-cover{
+        right: 0;
+        left: auto;
+      }
+    }
+
+    @include e('right') {
+      position: relative;
+    }
+  }
+}//.row

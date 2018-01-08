@@ -1,0 +1,25 @@
+<nav class="nav">
+	<ul>
+		<li class="nav__item compact">
+			<div class="button icon" data-toggle="app" data-target="#search-nav">
+			  <div class="content--visible">
+			  	<div><svg class="svg svg-search"><use xlink:href="#svg-search"></use></svg></div>
+			  </div> 
+			  <div class="content--hidden">
+			    <div></div>
+			  </div>
+			</div>
+		</li>
+		<li class="nav__item">
+			<a href="/roupas">Roupas</a>
+		</li>
+		<li class="nav__item">
+			<a href="/vestidos">Vestidos</a>
+		</li>
+		<li class="nav__item">
+			<a href="/acessorios">Acessórios</a>
+		</li>
+	</ul>
+</nav>
+
+{% include "../search/nav.njk" %}

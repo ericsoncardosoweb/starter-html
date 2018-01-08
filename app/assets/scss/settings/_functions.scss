@@ -1,0 +1,61 @@
+@function power($number, $power) {
+    $exponent: 1;
+
+    @if $power > 0 {
+        @for $i from 1 through $power {
+            $exponent: $exponent * $number;
+        }
+    } @else if $power < 0 {
+        @for $i from 1 through $power {
+            $exponent: $exponent / $number;
+        }
+    }
+
+    @return $exponent;
+}
+
+@function colorLuminance($color) {
+  $colors: (
+    'red': red($color),
+    'green': green($color),
+    'blue': blue($color)
+  );
+
+  @each $name, $value in $colors {
+    $adjusted: 0;
+    $value: $value / 255;
+
+    @if $value < 0.03928 {
+      $value: $value / 12.92;
+    } @else {
+      $value: ($value + .055) / 1.055;
+      $value: power($value, 2.4);
+    }
+
+    $colors: map-merge($colors, ($name: $value));
+  }
+
+  @return (map-get($colors, 'red') * .2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
+}
+
+@function findColorInvert($color) {
+  @if (colorLuminance($color) > 0.55) {
+    @return rgba(#000, 0.7)
+  } @else {
+    @return #fff
+  }
+}
+
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@function palette($palette, $tone: 'base') {
+    @return map-get( map-get($palettes, $palette), $tone );
+}

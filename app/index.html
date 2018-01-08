@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<!-- ========= BEGIN: SEO ========= --> 
+	<title>Título da Página | {{ site.name }}</title>
+	<meta name="description" content="Descrição da página" />
+		<!-- Open Graph Protocol Meta -->
+		<meta property='og:title' content='Título da Página' />
+		<meta property='og:url' content='URL Atual' />
+		<meta property='og:image' content='Imagem de Compartilhamento 476x251' />
+		<meta property='og:image:url' content='Imagem de Compartilhamento 476x251' />
+		<meta property='og:description' content='Descrição da página' />
+		<!-- END Open Graph Protocol Meta -->
+
+		<!-- BEGIN Twitter -->
+    <meta name="twitter:title" content="Título da Página" />
+    <meta name="twitter:description" content="Descrição da página" />
+		<!-- END Twitter --> 
+	<!-- ========== END: SEO ========== -->
+
+	@@include('./partials/_head.html')
+
+</head>
+<body>  
+	<div id="app" class="wrapper">
+		@@include('./components/header/_header.html' , {
+		        contents:'Exemplo de Include'
+		   })
+
+		<!-- ========= BEGIN: VIEW ========= -->
+		@@include('./views/_home.html') 
+		<!-- ========== END: VIEW ========== --> 
+
+		@@include('./components/footer/_footer.html') 
+ 
+		@@include('./partials/_globals.html')
+	</div>
+
+	@@include('./partials/_requests.html')
+
+</body> 
+</html>

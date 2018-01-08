@@ -1,0 +1,127 @@
+@import "../../assets/styles/settings/all";
+
+.banner{
+  position: relative;
+
+  @include e('price') {
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    left: 15px;
+    font-size: em(18);
+    font-family: $font-secondary;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: palette(brand, primary);
+
+    p{
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      margin: 0 0 5px;
+    }
+
+    &.bottom{
+      top: auto;
+      bottom: 15px;
+    }
+
+    &.right{
+      left: auto;
+      right: 15px;
+    }
+
+    .price--feature{
+      font-size: em(54);
+      font-family: $font-secondary;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: palette(brand, primary);
+      line-height: 1;
+
+      span{
+        font-size: em(8)
+      }
+    }
+
+
+
+  }
+
+  @include e('label') {
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    left: 15px;
+    background: palette(brand, primary);
+    padding: 5px 15px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: em(16);
+    font-family: $font-secondary;
+    font-weight: bold;
+
+    &.bottom{
+      top: auto;
+      bottom: 15px;
+    }
+
+    &.right{
+      left: auto;
+      right: 15px;
+    }
+  }
+
+  @include m('feature') {
+    @extend .banner;
+
+  }
+
+  .item{
+    position: relative;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .slick-dots{
+      position: absolute;
+      top: calc(100% - 35px);
+      right: 50%;
+      transform: translateX(50%);
+      width: auto;
+      text-align: center;
+      z-index: 10;
+
+      li{
+          display: inline-block;
+          background: transparent;
+          width: 13px;
+          height: 13px;
+          cursor: pointer;
+          margin: 5px 10px;
+      }
+
+      /*----------  desktop  ----------*/
+      @include min-screen($start-mobile) {
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          width: 20px;
+          z-index: 10;
+
+          li{
+              display: block;
+              margin: 20px 0;
+          }
+      }
+
+  }
+
+
+
+}
+
+@import "banner-grid";

@@ -1,0 +1,139 @@
+.form-lined{
+	.form-group {
+		position: relative;
+		margin-top: ($md-gap * 2);
+		margin-bottom: ($md-gap * 2);
+
+		.text-help{
+			margin-top: 5px;
+		}
+
+		input {
+			height: ($md-font-size * 2.9);
+			min-height: initial;
+			box-sizing: border-box;
+		}
+
+		textarea {
+			resize: none;
+		}
+
+		select {
+			width: 100%;
+			font-size: $md-font-size;
+			height: ($md-font-size * 1.6);
+			padding: $md-spacer $md-spacer ($md-spacer / 2);
+			background: none;
+			border: none;
+			line-height: 1.6;
+			box-shadow: none;
+		}
+
+		.control-label {
+			position: absolute;
+			top: ($md-font-size / 4);
+			padding-left: $md-spacer;
+			z-index: 1;
+			color: $md-label-color;
+			font-size: $md-font-size;
+			text-transform: uppercase;
+			font-weight: 500;
+			transition: all $md-transition-speed ease;
+		}
+
+		.bar {
+			position: relative;
+			border-bottom: ($md-font-size / 16) solid $md-border-color;
+			display: block;
+
+			&::before {
+				content: '';
+				height: ($md-font-size / 8);
+				width: 0;
+				left: 50%;
+				bottom: ($md-font-size / -16);
+				position: absolute;
+				background: $md-focus-color;
+				transition: left $md-transition-speed ease, width $md-transition-speed ease;
+				z-index: 2;
+			}
+		}
+
+		input,
+		textarea {
+			display: block;
+			background: none;
+			padding: $md-spacer $md-spacer ($md-spacer / 2);
+			font-size: $md-font-size;
+			border-width: 0;
+			border-color: transparent;
+			line-height: 1.9;
+			width: 100%;
+			color: transparent;
+			transition: all $md-transition-speed ease;
+			box-shadow: none;
+		}
+
+		input[type="file"] {
+			line-height: 1;
+
+			~ .bar {
+				display: none;
+			}
+		}
+
+		select,
+		input:focus,
+		input:valid,
+		input.form-file,
+		input.has-value,
+		textarea:focus,
+		textarea:valid,
+		textarea.form-file,
+		textarea.has-value {
+			color: $md-input-color;
+
+			~ .control-label {
+				font-size: $md-active-font-size;
+				color: $md-active-color;
+				top: $md-active-top;
+				left: 0;
+			}
+		}
+
+		select,
+		input,
+		textarea {
+			&:focus {
+				outline: none;
+
+				~ .control-label {
+					color: $md-focus-color;
+				}
+
+				~ .bar {
+					&::before {
+						width: 100%;
+						left: 0;
+					}
+				}
+			}
+		}
+
+		/*----------  Validations  ----------*/
+		&.has-error{
+			.bar{
+				border-bottom-color: palette(stage, danger);
+			}
+
+			.help-block{
+				position: absolute;
+				left: 0;
+				bottom: -30px;
+			}
+		}
+
+
+	}//.form-group
+
+}//.form-lined

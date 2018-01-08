@@ -1,0 +1,5 @@
+@mixin only-mobile-small(){
+  @include min-screen($mobile-small){
+    @content;
+  }
+}

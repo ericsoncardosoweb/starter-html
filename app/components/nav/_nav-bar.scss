@@ -1,0 +1,92 @@
+.nav-bar{
+  line-height: 1;
+  height: auto;
+  box-shadow: none;
+  border-top: 1px solid #ebebeb; 
+  border-bottom: 1px solid #ebebeb; 
+  padding: 0;
+  background: #FFF;
+  color: #000;
+  fill: #000;
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px 0;
+ 
+    li{ 
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+      color: #999;
+      fill: #999;
+      text-align: center;
+      line-height: 1;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 500;
+      height: 100%;
+      position: relative;
+
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: palette(brand, primary);
+        transform: translateX(-50%);
+        transition: all 0.4s;
+      }
+      
+      &:hover, &.active{
+        color: #000;
+        fill: #000;
+        &:after{
+          width: 100%;
+        }
+      }
+
+      button, a{
+        display: block;
+        width: 100%;
+        background: transparent;
+        border: 0;
+        padding: 15px 12px; 
+        font-size: 15px;
+        text-transform: inherit;
+        font-weight: weight;
+        text-align: center;        
+      }
+
+      a, button{
+        >i, >svg, >img{
+          width: 22px;
+          height: 22px;
+          line-height: 22px;
+          margin: 0 auto 8px!important;
+        }
+      }
+
+      i, i.material-icons{
+        line-height: 1;
+        height: auto;
+      }
+
+      i, svg{
+        display: inline-block;
+      }
+
+
+      @include linkreset();
+    }
+  }
+}

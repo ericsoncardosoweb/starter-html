@@ -1,0 +1,52 @@
+div.content{
+  width: initial;
+  padding: initial;
+  margin: initial;
+}
+
+.container:not(.is-fluid) {
+  max-width: $container-width;
+  width: 100%;
+  padding-left: 20px; 
+  padding-right: 20px;
+  margin: 0 auto;
+
+  @include min-screen(1400px) {
+    padding-left: 8%;
+    padding-right: 8%;
+    max-width: 100%;
+  }
+
+  &.is-small{ 
+    max-width: 610px;
+  }
+
+  &.is-medium{
+    max-width: 880px;
+  }
+ 
+  &.is-large{ 
+    max-width: 1700px;
+  }
+
+  @include min-screen($start-mobile) {
+    &.has-nav-left{
+      @include clearfix();
+      >.content{
+        width: calc(100% - 90px);
+        float: right;
+      }
+    }
+  }
+
+
+@include clearfix(); 
+}
+
+.container-fluid, div.container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+

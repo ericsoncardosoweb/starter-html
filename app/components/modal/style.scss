@@ -1,0 +1,121 @@
+@import "../../assets/styles/settings/all";
+
+.modal.fade{
+  opacity:1;
+}
+.modal.fade .modal-dialog {
+  transform: translate(0);
+} 
+
+.modal{
+  text-align: center;
+  padding: 0!important;
+  background: rgba(#000, 0.5);
+  display: block!important;
+  transform: translateY(-150%);
+  transition: 0s;
+
+  &.active{
+    transform: translateY(0);
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+
+  .close{
+    opacity: 1;
+    font-size: em(14);
+    text-transform: uppercase;
+
+    > .svg{
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+
+      &:first-child{
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .modal-header {
+    padding: 20px;
+  }
+
+  .modal-header, .modal-footer{
+    border: 0;
+    position: relative;
+  }
+
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .modal-content{
+    border: 0;
+  }
+
+  // centered
+  &.modal--centered{
+    &.large{
+
+      .modal-footer{
+
+        .close.centered{
+          margin: 0 auto;
+          text-align: center;
+
+
+
+          display: block;
+          width: 100%;
+          transform: translateY(30px);
+
+          .circle{
+            display: block;
+            margin: 5px auto;
+            transform: translateY(10px);
+          }
+        }
+      }
+
+      .modal-dialog{
+        padding-left: 8%;
+        padding-right: 8%;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .modal-body{
+        width: 100%;
+        
+        @include min-screen('1000px') {
+          &[data-simplebar]{
+            height: calc(86vh - 140px);
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            .simplebar-scroll-content{
+              overflow-y: auto;
+            }
+
+            .simplebar-track.horizontal{display: none;}
+          }
+        }
+
+        @include min-screen('1200px') {
+          padding: 18px 28px;
+        }
+      }
+
+    }
+  }//&.centered
+
+}//.modal
