@@ -1,7 +1,7 @@
 /**
  * Gulp for Front End.
  *
- * @businnes Blite TI
+ * @businnes Lumus Inteligência Estratégica
  * @author  Ericson Cardoso <ericson.cardoso@bliteti.com.br>
  * @version 2.0.0
  * @license The MIT License (MIT)
@@ -123,6 +123,7 @@ gulp.task('server', () => {
   gulp.watch(`./${config.path.src}/vendors/**/**/**/*.js`, ['vendors:js']);
   gulp.watch(`./${config.path.src}/vendors/**/**/**/*.scss`, ['vendors:css']);
   gulp.watch(`./${config.path.src}/styles/**/**/**/*.scss`, ['styles:scss']);
+  gulp.watch(`./${config.path.src}/styles/**/**/**/*.scss`, ['styles:basic']);
   gulp.watch(`./${config.path.src}/views/**/**/**/*.pug`, ['views:pug']);
 });
 
@@ -136,6 +137,7 @@ gulp.task('build', (callback) => sequence(
   ['assets'],
   ['scripts:js'],
   ['styles:scss'],
+  ['styles:basic'],
   ['components:js'],
   ['components:css'],
   ['modules:js'],
@@ -187,6 +189,7 @@ gulp.task('concatFiles', (callback) => sequence(
 gulp.task('views:pug', tasks.views.pug);
 
 gulp.task('styles:scss', tasks.styles.scss);
+gulp.task('styles:basic', tasks.styles.basic);
 
 gulp.task('scripts:lint', tasks.scripts.lint);
 gulp.task('components:lint', tasks.components.lint);

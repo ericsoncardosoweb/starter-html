@@ -35,13 +35,12 @@ module.exports = {
     .pipe(changed(config.image.dist))
     .pipe(imagemin(config.image.imagemin))
     .pipe(gulp.dest(config.image.dist))
-    .pipe(livereload());
   },
   symbols: function () {
     gulp.src(config.svg.src)
     .pipe(svgSprite(config.svg.symbols))
     .pipe(gulp.dest(config.svg.dist))
-    .pipe(livereload());
+    .pipe(gulp.dest(config.svg.media))
   },
   icons: function () {
     gulp.src([config.icons.src])
@@ -49,7 +48,6 @@ module.exports = {
     .pipe(iconfontCss(config.icons.iconFontCss))
     .pipe(iconfont(config.icons.iconFont))
     .pipe(gulp.dest(config.icons.dist))
-    .pipe(livereload());
   },
   sprites: function () {
     gulp.src([config.sprites.src])
@@ -60,7 +58,6 @@ module.exports = {
     }))
     .pipe(gulpif('*.png', gulp.dest(config.sprites.dist)))
     .pipe(gulpif('*.scss', gulp.dest(config.sprites.scss)))
-    .pipe(livereload());
   },
   fonts: function () {
     gulp
@@ -70,6 +67,5 @@ module.exports = {
     .pipe(changed([config.fonts.dist]))
     // Save files
     .pipe(gulp.dest([config.fonts.dist]))
-    .pipe(livereload());
   },
 };

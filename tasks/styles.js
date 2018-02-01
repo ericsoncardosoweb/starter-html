@@ -50,5 +50,23 @@ module.exports = {
     ]) )
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(config.styles.dist))
+  },
+  basic: function () {
+    gulp.src(config.path.src+'/styles/basic.scss')
+    .pipe(sass({
+        outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe( autoprefixer(config.autoprefixer) )
+    .pipe( lineec() )
+    .pipe(stylefmt())
+    .pipe( postcss([
+      cssMqpacker(), // Combine matching media queries.
+      cssnano({
+        reduceIdents: false,
+        zindex: false
+      })
+    ]) )
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest(config.path.src+'/media/'))
   }
 };

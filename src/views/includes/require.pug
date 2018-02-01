@@ -1,0 +1,27 @@
+//- CSS
+case env
+  when "dev"
+    link(href="/assets/css/vendors.css", rel="stylesheet")
+    link(href="/assets/css/components.css", rel="stylesheet")
+    link(href="/assets/css/modules.css", rel="stylesheet")
+    link(href="/assets/css/style.css", rel="stylesheet")
+  when "stage"
+  when "prod"
+    link(href="/assets/css/all.min.css", rel="stylesheet")
+
+//- JavaScript
+case env
+  when "dev"
+    script(src="/media/jquery.min.js")
+    script(src="/assets/js/vendors.min.js")
+    script(src="/assets/js/components.js")
+    script(src="/assets/js/modules.js")
+    script(src="/assets/js/main.js")
+  when "stage"
+  when "prod"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    script(src="/assets/js/all.min.js")
+
+//- Symbol-links
+div(style="display:none;")
+  include ./../../media/svg/symbols.svg

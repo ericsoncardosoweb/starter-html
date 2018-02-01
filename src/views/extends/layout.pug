@@ -1,8 +1,9 @@
 block variables
 doctype html
-html(lang="en")
+html(lang="pt-br")
   head
     include /includes/head
   body
-    block content
-    include /includes/scripts
+    div(id="app" class="wrapper")
+      block content
+    include /includes/require

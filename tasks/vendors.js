@@ -39,14 +39,14 @@ module.exports = {
   js: function () {
     gulp.src(config.vendors.srcJs)
     // Concatenate includes
-    .pipe(include({
-      includePaths: [
-        `${__dirname}/bower_components`,
-        `${__dirname}/node_modules`,
-      ],
-    }))
+    // .pipe(include({
+    //   includePaths: [
+    //     `${__dirname}/bower_components`,
+    //     `${__dirname}/node_modules`,
+    //   ],
+    // }))
     // Transpile
-    .pipe(babel())
+    // .pipe(babel())
     .pipe(concat('vendors.js'))
     .pipe(gulp.dest(config.vendors.distJs))
     // Optimize and minify

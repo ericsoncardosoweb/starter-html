@@ -46,7 +46,7 @@ module.exports = {
     distCss: dist + '/assets/css/'
   },
   vendors: {
-    srcJs: [src + '/vendors/plugins/**/**/*.js', src + '/vendors/*.js'],
+    srcJs: [src + '/vendors/plugins/**/**/**/*.js', src + '/vendors/*.js'],
     distJs: dist + '/assets/js/',
     srcCss: [src + '/vendors/plugins/**/**/*.css', src + '/vendors/plugins/**/**/*.scss'],
     distCss: dist + '/assets/css/'
@@ -83,6 +83,7 @@ module.exports = {
   svg: {
     src: src + '/assets/symbols/**/*.svg',
     dist: dist + '/assets/',
+    media: src + '/media/',
     symbols: {
       mode: "symbols",
       common: "svg",
