@@ -1,0 +1,30 @@
+@import "typography", "colors", "spaces", "shadows";
+
+.bg-cover{
+  @include absolute_all();
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  & ~ *{
+    position: relative;
+    z-index: 2;
+  }
+
+
+}
+
+.bg-clean {
+    background-color: palette(brand, clean);
+}
+
+.bg-primary {
+    background-color: palette(brand, primary);
+    color: #FFF;
+}
+
+.link-phone{
+  text-decoration: none;
+  @include linkreset();
+}

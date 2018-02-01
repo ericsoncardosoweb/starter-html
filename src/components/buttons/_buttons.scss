@@ -1,0 +1,258 @@
+.button{
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: none;
+  border: none;
+  vertical-align: baseline;
+  background: none;
+  margin: 0;
+  padding: 0.78571429em 1em 0.78571429em;
+
+  font-family: $btn-ff;
+  font-weight: 600;
+  line-height: 1em;
+  font-style: normal;
+  font-size: $btn-fz;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: none;
+
+  color: palette(brand, primary);
+  border-radius: $btn-bd-radius;
+  box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  will-change: '';
+  -webkit-tap-highlight-color: transparent;
+  speak: none;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s ease;
+
+  // icons
+  i, svg, img, span{
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.4s ease;
+  }
+
+  i, svg, img{
+    &:first-child:not(:last-child){
+      margin-right: 7px;
+    }
+    &:last-child:not(:first-child){
+      margin-left: 7px;
+    }
+  }
+
+  svg{
+    width: 22px;
+    height: 22px;
+  }
+
+  i{
+    font-size: 1.2em;
+  }
+
+  &:focus, &:active{
+
+  }
+
+  &:hover{
+
+  }
+
+  &:disabled{
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  /*----------  Colors  ----------*/
+  @each $color-name, $color-code in $btncolors {
+    &.#{$color-name} {
+      background: $color-code!important;
+      color: #FFF;
+
+      &:hover, &:active, &:visited{
+        box-shadow: rgba(#000, 0.3) inset 0 0 400px;
+      }
+    }
+  }
+
+  /*----------  Sizes  ----------*/
+  @each $size-name, $size-code in $btnsizes {
+    &.#{$size-name} {
+      font-size: $size-code;
+    }
+  }
+
+  /*----------  Custom  ----------*/
+  &.contrast{
+    color: palette(brand, secondary);
+    padding: 17px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+
+    &.icon-action:not(.custom){
+      text-align: left;
+
+      .icon-action__item{
+        border-left-color: rgba(0, 83, 136, 0.1);
+        width: 50px;
+        font-size: 0.86em;
+      }
+    }
+  }
+
+  /*----------  Mode  ----------*/
+  &.compact{
+    padding: 0.58928571em 1.125em 0.58928571em;
+  }
+
+  &.icon{
+    padding: 0.58928571em 0.58928571em 0.58928571em;
+
+    i, svg, img{
+      margin: 0!important;
+    }
+
+    svg{
+
+    }
+  }
+
+  &.min-w{
+    min-width: 224px;
+  }
+
+  &.block{
+    width: 100%;
+
+    & + *{
+      margin-top: 10px;
+    }
+  }
+
+  &.rounded{
+    border-radius: 5px;
+
+    @include m('top') {
+      border-radius: 5px 5px 0 0;
+    }
+
+    @include m('bottom') {
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  &.circle{
+    border-radius: 50%;
+  }
+
+  &.square{
+    border-radius: 0!important;
+  }
+
+  &.curet{
+    &:after{
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid currentColor;
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+    }
+
+    &.large{
+      &:after{
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 7px solid currentColor;
+      }
+    }
+  }
+
+  &.icon-action:not(.custom){
+    padding-right: 66px;
+    position: relative;
+    background-color: #f2f7fa;
+
+    .icon-action__item{
+      border-left: 1px solid rgba(palette(brand, primary), 0.2);
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: em(12);
+      transition: all 0.6s;
+
+      i, span {
+        font-size: inherit;
+        transition: none;
+      }
+    }
+
+    &.large{
+      padding-right: 82px;
+
+      .icon-action__item {
+        width: 56px;
+        font-size: em(14);
+      }
+    }
+
+    &:hover{
+      .icon-action__item {
+        >*{
+          animation-name: shake;
+          transform-origin: center;
+          animation-duration: 1.2s;
+          animation-fill-mode: both;
+        }
+      }
+    }
+
+
+  }
+
+
+}
+
+// bugs
+div.button{
+  *{
+    cursor: pointer;
+  }
+}
+
+@keyframes shake{
+  0%, 100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+  25%, 60% {
+      transform: translate3d(-10px, 0, 0);
+      opacity: 0.5;
+  }
+  45%, 90% {
+      transform: translate3d(10px, 0, 0);
+      opacity: 0;
+  }
+}

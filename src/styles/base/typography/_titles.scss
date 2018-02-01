@@ -1,0 +1,50 @@
+.section-title{
+  font-size: em(56);
+  color: palette(brand, primary);
+  font-weight: 200;
+  margin: 0 0 40px;
+
+  &.large{
+    font-size: em(40);
+    font-weight: 400;
+
+    @include min-screen(400px) {
+      font-size: em(60);
+    }
+
+    @include min-screen(600px) {
+      font-size: em(80);
+    }
+
+    @include min-screen(900px) {
+      font-size: em(114);
+    }
+  }
+
+  &.right{
+    text-align: right;
+  }
+
+  &.middle{
+    transform: translateY(-55%);
+    margin-bottom: 0;
+  }
+
+  small{
+    font-size: 18px;
+    display: block;
+  }
+}
+
+.page-title{
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: em(52);
+  color: palette(brand, accent);
+  letter-spacing: 0.5em;
+  margin: 0 0 33px;
+
+  span{
+    color: palette(brand, highlight);
+  }
+}

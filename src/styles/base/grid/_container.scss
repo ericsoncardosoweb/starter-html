@@ -1,0 +1,33 @@
+.container {
+  max-width: 1240px;
+  width: 100%; 
+  padding-left: 20px; 
+  padding-right: 20px;
+  margin: 0 auto;
+
+
+  &.is-small{ 
+    max-width: 610px;
+  }
+
+  &.is-medium{
+    max-width: 880px;
+  }
+ 
+  &.is-large{ 
+    max-width: 1700px;
+  }
+
+
+
+@include clearfix(); 
+}
+
+.container-fluid{
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+

@@ -1,0 +1,61 @@
+.button{
+	&.outlined{
+    background: transparent;
+    border: solid 2px palette(brand, primary);
+    color: palette(brand, primary);
+    fill: palette(brand, primary);
+    border-radius: 5px;
+
+    i, svg, span[class*=icon]{
+    	color: inherit;
+    	fill: inherit;
+    }
+
+
+
+		/*----------  Colors  ----------*/
+		@each $color-name, $color-code in $btncolors {
+		  &.#{$color-name} {
+		    color: $color-code;
+		    border: solid 2px $color-code;
+		    background-color: transparent!important;
+
+		    &:hover{
+		      box-shadow: rgba(#000, 0.3) inset 0 0 400px;
+		    }
+		  }
+		}
+
+		&.large{
+			padding: 0.98em 1.4em;
+		}
+
+
+		&:hover{
+			background: transparent;
+		}
+
+		&.icon-action:not(.custom){
+		  text-align: left;
+		  background: transparent;
+
+		  .icon-action__item{
+		    border-left:  1px solid palette(brand, primary);
+		    width: 50px;
+		    font-size: 0.86em;
+		  }
+
+      &.white{
+        border-width: 1px;
+        .icon-action__item{
+          border-left:  1px solid #FFF;
+        }
+      }
+
+		  &:hover{
+		  	background: transparent;
+		  }
+		}
+	}
+
+}

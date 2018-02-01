@@ -1,0 +1,11 @@
+extends /extends/layout
+include /mixins/sample
+
+block variables
+  - var title = "Starter Kit";
+  - var description = "Starter Kit";
+
+block content
+  h1 Starter Kit para Interfaces otimizadas
+  +sample("Exemplo de aplicação de class com pug")(class="c-sample--modifier")
+

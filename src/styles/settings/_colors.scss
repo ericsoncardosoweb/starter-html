@@ -1,0 +1,60 @@
+﻿/**
+ *
+ * Configurações de Cores
+ *
+ * As tonalidades das Cores serão definidas por:
+ * ice, clean, light, dark, heavy
+ *
+ */
+
+/*----------  Paleta de cores do tema  ----------*/
+$palettes: (
+    grey: (
+        black: #000,
+        heavy: #222,
+        dark: #666,
+        base: #888,
+        light: #c5cad0,
+        clean: #eee,
+        ice: #f5f5f5,
+        white: #fff,
+    ),
+    brand: (
+        primary: #005388, //Principal
+        secondary: #016EA7, //Alternativa
+        accent: #4E7A96, //Destaque com a cor principal
+        contrast: #FFDE00, //Contraste com a cor principal
+        highlight: #A29D7C, //Destaque,
+        light: #D6E7F0,
+        clean: #f2f7fa
+    ),
+    text: (
+        primary: #005388,
+        primary-contrast: #fff,
+        default: #333,
+        light: #999,
+        blue: #222a73
+    ),
+    stage: (
+        success: #3ed22c,
+        danger: #c82d2d,
+        alert: #d29f2c,
+        warning: #d2522c,
+        info: #2cbbd2,
+    )
+);
+
+$white: #FFF;
+$black: #000;
+
+
+/*----------  Funções de Cores  ----------*/
+$primary-text-color:   #121212;
+$secondary-text-color: #919598;
+
+$divider-color: #BDBDBD;
+
+$border-color: #BDBDBD;
+$border-color-light: #e1e1e1;
+
+$bg-body: #fff;
