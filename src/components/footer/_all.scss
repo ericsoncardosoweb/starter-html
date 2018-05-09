@@ -1,0 +1,116 @@
+.footer {
+    clear: both;
+    padding: 80px 0 0;
+    border-top: 1px solid palette(brand, light);
+    background-color: rgba(palette(brand, crystal), .32);
+    position: relative;
+    z-index: 0;
+
+    .link-phone{
+        min-width: 106px;
+        display: inline-block;
+    }
+
+    &__inner {
+
+        &--widget {
+
+            .widget-title {
+                font-size: em(18);
+                font-weight: 600;
+                margin-bottom: 5px;
+                color: #016ea7;
+            }
+
+            .btn {
+                font-family: 'Titillium Web', sans-serif;
+                text-align: left;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+
+            .btn-lg {
+                padding: 16px 24px;
+                font-size: 14px;
+                line-height: 1.3333333;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -ms-border-radius: 3px;
+                -o-border-radius: 3px;
+                border-radius: 3px;
+            }
+
+            .btn-primary-o {
+                color: palette(brand, secondary);
+                background-color: transparent;
+                border-color: palette(brand, light);
+
+                &:hover, &:focus {
+                    background-color: rgba(158, 200, 222, 0.2);
+                }
+            }
+        }
+
+        &--copyright {
+            border-top: 1px solid palette(brand, light);
+            padding: 40px 0;
+            font-family: 'Titillium Web', sans-serif;
+            text-align: center;
+
+            p {
+                color: palette(brand, secondary);
+                font-size: 16px;
+                margin-bottom: 0;
+                line-height: 1.6;
+            }
+        }
+    }
+
+    .nav-list--small {
+        border-top: 1px solid palette(brand, light);
+        padding-top: 15px;
+        margin-top: 45px;
+    }
+
+    .button.light {
+        padding: 17px 15px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+	.footer {
+		border-top: 0;
+		padding-top: 0;
+
+		&__inner {
+
+			&--widget {
+				display: none;
+			}
+
+			&--copyright {
+				padding: {
+					top: 33px;
+					bottom: 21px;
+				}
+
+				.col {
+					padding: {
+						right: 40px;
+						left: 40px;
+					}
+				}
+
+				p {
+					color: palette(brand, secondary);
+					font-size: em(14);
+					margin-bottom: 0;
+					line-height: 1.72;
+				}
+			}
+		}
+	}
+}
+
+/*=====  End of FOOTER  ======*/

@@ -1,0 +1,26 @@
+/**
+ *
+ * Folha de Estilo Principal
+ * Esta folha carregará estilos secundários da aplicação
+ * 
+ * @projetc: Loja Vitual - UdoF
+ * project uri: https://bitbucket.org/blite/material-design/
+ * @version: 1.0
+ * @author: KInterativa
+ * developer: Ericson Cardoso
+ * @description: Interface da loja virtual UdoF
+ *
+ */ 
+
+@import "settings/all";// Configurações do SASS - Variáveis, Mixins, Funções, etc
+
+/* -----------------------------------*/
+/* ---------->>> GLOBAL <<<-----------*/
+/* -----------------------------------*/
+@import "utils/all"; // Classes auxiliares para facilitar o desenvolvimento
+@import "custom/all"; // Algo fora do padrão lógico do layout? "É só para essa página que vai se comportar assim...". Utilize esse diretório para inserir essas peculiaridades
+
+/* -----------------------------------*/
+/* ---------->>> ASSETS <<<-----------*/
+/* -----------------------------------*/
+@import "media/all"; // Para otimizar o carregamento da folha d estilo todos os arquivos requisitados pelo css (Imagens, fontes, etc) insira nesse diretório

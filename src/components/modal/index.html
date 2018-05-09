@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <title>Modal - Componentes</title>
+  <link rel="stylesheet" href="./../../dist/css/basic.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .panel {
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .panel-heading {
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+    .panel-body {
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- ======================== BEGIN: MODAL COMPONENTS ======================== -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3 style="margin-bottom: 60px;">Modal</h3>
+
+          <div class="row">
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Código Promocional</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#invalidCode" class="button contrast block flat large button-invalid-code">Alugue</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Proteção e Acessórios</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#protectionAndAccessories" class="button contrast flat large button-protection-and-accessories block">Concluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="panel panel-default" style="margin-bottom: 40px;">
+                  <div class="panel-heading">
+                    <h5>Fluxo 3</h5>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col">
+                        <button type="button" data-toggle="modal" data-target="#flowThree" class="button contrast flat large button-flow-three block">Concluir</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Upgrade de categoria</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#upgradeCategory" class="button contrast flat large button-upgrade-category block">Selecionar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Código promocional ativo</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#tenPorcentOff" class="button contrast flat large button-ten-porcent-off block">Selecionar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Reserve 5 diárias e pague 4 diárias</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#fiveDaily" class="button contrast flat large button-five-daily block">Selecionar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Reservou 5 diárias</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#fiveDaily2" class="button contrast flat large button-five-daily-2 block">Selecionar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Data de retirada</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#dateWithdrawal" class="button contrast flat large button-date-withdrawal block">Alugue</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Diária grátis</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#freeDaily" class="button contrast flat large button-free-daily block">Alugue</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Alterar essa informação...</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#chooseAgain" class="button contrast flat large button-choose-again block">Concluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Horário indisponível</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#timeUnavailable" class="button contrast flat large button-time-unavailable block">Alugue</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Termos e Condições</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#termsAndConditions" class="button contrast flat large button-terms-conditions block">Concluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Proteção Veicular</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#vehicularProtection" class="button contrast flat large button-vehicular-protection block">Concluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Características do Grupo</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#groupFeatures" class="button contrast flat large button-group-features block">Concluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Subtotal</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#subtotal" class="button contrast flat large button-subtotal block">Concluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="panel panel-default" style="margin-bottom: 40px;">
+                <div class="panel-heading">
+                  <h5>Cancelar reserva</h5>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col">
+                      <button type="button" data-toggle="modal" data-target="#cancelReservation" class="button contrast flat large button-cancel-reservation block">Cancelar reserva</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= END: MODAL COMPONENTS ========================= -->
+
+  <!-- ======================= STYLES ======================= -->
+  <link rel="stylesheet" href="./../../dist/css/vendors.css">
+  <link rel="stylesheet" href="./../../dist/css/components.css">
+  <link rel="stylesheet" href="./../../dist/css/modules.css">
+  <link rel="stylesheet" href="./../../dist/css/style.css">
+
+  <!-- ======================= FONTS ======================= -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700,900" rel="stylesheet">
+
+  <!-- ======================= SCRIPTS ======================= -->
+  <script src="./../../dist/public/jquery.min.js"></script>
+  <script src="./../../dist/js/vendors.js"></script>
+  <script src="./../../dist/js/components.js"></script>
+  <script src="./../../dist/js/modules.js"></script>
+  <script src="./../../dist/js/main.js"></script>
+
+  <!-- START: Invalid Code -->
+  <div class="modal fade" id="invalidCode" tabindex="-1" role="dialog" aria-labelledby="invalidCodeLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--invalid-code" role="document">
+      <div class="modal-content">
+        <div class="modal-body body--invalid-code">
+          <div class="body--invalid-code__inner">
+            <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+              <img src="./../../media/sprites/icon-close.png" alt="">
+            </a>
+            <p>Este código não é válido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Invalid Code -->
+  
+  <!-- START: Protection And Accessories -->
+  <div class="modal fade" id="protectionAndAccessories" tabindex="-1" role="dialog" aria-labelledby="protectionAndAccessoriesLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--protection-and-accessories" role="document">
+      <div class="modal-content">
+        <div class="modal-body body--protection-and-accessories">
+          <div class="body--protection-and-accessories__inner">
+            <div class="wrapper-image">
+              <img src="./../../media/sprites/icon-baby-chair.png" alt="">
+            </div>
+            <h3 class="modal-headline">Cadeira de Bebê</h3>
+            <div class="box--add__price price">
+              <label>
+                <span class="price__coin">R$</span><span class="price__amount">80,</span>
+                <span class="price__details">diária</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer footer--protection-and-accessories">
+          <div class="quantity">
+            <button class="minus"></button>
+            <input type="number">
+            <button class="plus"></button>
+          </div>
+        </div>
+        <div class="modal-buttons buttons--protection-and-accessories">
+          <div class="row">
+            <div class="col">
+              <a href="#" class="button large flat ice block">CANCELAR</a>
+            </div>
+            <div class="col">
+              <a href="#" class="button large flat contrast block">ADICIONAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Protection And Accessories -->
+
+  <!-- START: Flow three -->
+  <div class="modal fade" id="flowThree" tabindex="-1" role="dialog" aria-labelledby="flowThreeLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--flow-three" role="document">
+      <div class="modal-content">
+        <div class="modal-body body--flow-three">
+          <div class="body--flow-three__inner">
+            <ul>
+              <li>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="./../../media/sprites/icon-wi-fi.png" alt="">
+                  </div>
+                  <div class="col">
+                    <h4 class="body--headline">Wi-Fi a bordo</h4>
+                    <p class="body--text">Com exceção do GPS, a disponibilidade dos acessórios deve ser confirmada por meio da Central de Reservas 24 horas Unidas – ligue 0800 121 121. O cálculo da locação considerando esse (s) acessório(s) selecionado(s) não garante a disponibilidade do(s) mesmo(s).</p>
+                    <div class="price">
+                      <span class="price__coin">R$</span>
+                      <span class="price__amount">20,00</span>
+                      <span class="price__details">diária</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="./../../media/sprites/icon-gps.png" alt="">
+                  </div>
+                  <div class="col">
+                    <h4 class="body--headline">GPS</h4>
+                    <p class="body--text">Faça seus trajetos sem nenhuma preocupação : alugue um GPS e siga sua rota pelo melhor caminho.</p>
+                    <div class="price">
+                      <span class="price__coin">R$</span>
+                      <span class="price__amount">20,00</span>
+                      <span class="price__details">diária</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="./../../media/sprites/icon-baby-comfort.png" alt="">
+                  </div>
+                  <div class="col">
+                    <h4 class="body--headline">Bebê Conforto</h4>
+                    <p class="body--text">Garanta mais segurança para a sua família: transporte crianças de até 1 ano com máxima segurança. A disponibilidade do Bebê Conforto deve ser confirmada por meio da Central de Reservas 24h Unidas – ligue 0800-121-121. O cálculo da locação considerando esse acessório não garante a disponibilidade do mesmo.</p>
+                    <div class="price">
+                      <span class="price__coin">R$</span>
+                      <span class="price__amount">20,00</span>
+                      <span class="price__details">diária</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="./../../media/sprites/icon-baby-chair.png" alt="">
+                  </div>
+                  <div class="col">
+                    <h4 class="body--headline">Cadeira de Bebê</h4>
+                    <p class="body--text">Sua viagem merece mais segurança: transporte crianças de 1 a 4 anos com toda a segurança. A disponibilidade da Cadeira de Bebê deve ser confirmada por meio da Central de Reservas 24h Unidas – ligue 0800-121-121. O cálculo da locação considerando esse acessório não garante a disponibilidade do mesmo.</p>
+                    <div class="price">
+                      <span class="price__coin">R$</span>
+                      <span class="price__amount">20,00</span>
+                      <span class="price__details">diária</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="./../../media/sprites/icon-lifting-seat.png" alt="">
+                  </div>
+                  <div class="col">
+                    <h4 class="body--headline">Assento de elevação</h4>
+                    <p class="body--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="price">
+                      <span class="price__coin">R$</span>
+                      <span class="price__amount">20,00</span>
+                      <span class="price__details">diária</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Flow three -->
+
+  <!-- START: Upgrade Category -->
+  <div class="modal fade" id="upgradeCategory" tabindex="-1" role="dialog" aria-labelledby="upgradeCategoryLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--upgrade-category" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">Código ativo</h6>
+        </div>
+        <div class="modal-body body--upgrade-category">
+          <div class="body--upgrade-category__inner">
+            <h3 class="upgrade-category--headline">Upgrade de categoria</h3>
+            <p class="upgrade-category--text">
+              Você ganhou um upgrade para<br>
+              o Grupo SV - SUV Automático.
+            </p>
+            <a href="#" class="button large flat contrast shadow block">OK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Upgrade Category -->
+
+  
+  <!-- START: 10% Off  -->
+  <div class="modal fade" id="tenPorcentOff" tabindex="-1" role="dialog" aria-labelledby="tenPorcentOffLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--ten-porcent-off" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">Código ativo</h6>
+        </div>
+        <div class="modal-body body--ten-porcent-off">
+          <div class="body--ten-porcent-off__inner">
+            <p class="ten-porcent-off--text">
+              Você ganhou <strong>10%</strong> de desconto<br>
+              sobre o valor da diária.
+            </p>
+            <a href="#" class="button large flat contrast shadow block">OK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: 10% Off -->
+
+  <!-- START: Five Daily  -->
+  <div class="modal fade" id="fiveDaily" tabindex="-1" role="dialog" aria-labelledby="fiveDailyLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--five-daily" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">Código ativo</h6>
+        </div>
+        <div class="modal-body body--five-daily">
+          <div class="body--five-daily__inner">
+            <p class="five-daily--text">
+              Se você reservar <strong>5 diárias</strong>, pagará<br>
+              somente por <strong>4 diárias</strong>.
+            </p>
+            <a href="#" class="button large flat contrast shadow block">Alterar diárias</a>
+            <a href="#" class="button large flat contrast shadow block">Manter diárias</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Five Daily -->
+
+  <!-- START: Five Daily 2 -->
+  <div class="modal fade" id="fiveDaily2" tabindex="-1" role="dialog" aria-labelledby="fiveDaily2Label" aria-hidden="true">
+    <div class="modal-dialog dialog--five-daily-2" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">Código ativo</h6>
+        </div>
+        <div class="modal-body body--five-daily-2">
+          <div class="body--five-daily-2__inner">
+            <p class="five-daily-2--text">
+              Você está reservando <strong>5 diárias</strong><br>
+              pelo preço de <strong>4 diárias</strong>. Parabéns!
+            </p>
+            <a href="#" class="button large flat contrast shadow block">OK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Five Daily 2 -->
+
+  <!-- START: Date Withdrawal -->
+  <div class="modal fade" id="dateWithdrawal" tabindex="-1" role="dialog" aria-labelledby="dateWithdrawalLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--date-withdrawal" role="document">
+      <div class="modal-content">
+        <div class="modal-body body--date-withdrawal">
+          <div class="body--date-withdrawal__inner">
+            <p class="date-withdrawal--text">
+              A data de retirada é anterior<br>
+              a data de devolução
+            </p>
+            <a href="#" class="button large flat contrast shadow block">ALTERAR DATA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Date Withdrawal -->
+  
+  <!-- START: Free Daily -->
+  <div class="modal fade" id="freeDaily" tabindex="-1" role="dialog" aria-labelledby="freeDailyLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--free-daily" role="document">
+      <div class="modal-content">
+        <div class="modal-body body--free-daily">
+          <div class="body--free-daily__inner">
+            <p class="free-daily--text">
+              Você ganhou uma diária<br>
+              grátis. Parabéns!
+            </p>
+            <a href="#" class="button large flat contrast shadow block">ALTERAR DATA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Free Daily -->
+
+  <!-- START: Choose Again -->
+  <div class="modal fade" id="chooseAgain" tabindex="-1" role="dialog" aria-labelledby="chooseAgainLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--choose-again" role="document">
+      <div class="modal-content">
+        <div class="modal-body body--choose-again">
+          <div class="body--choose-again__inner">
+            <p class="choose-again--text">
+              <span class="wrapper-image">
+                <img src="./../../media/sprites/icon-warning.png" alt="">
+              </span>
+              Alterar essa informação<br>
+              requer escolher novamente<br>
+              Grupo de Carros
+            </p>
+            <a href="#" class="button large flat contrast shadow block">PROSSEGUIR</a>
+            <a href="#" class="button--link">CANCELAR ALTERAÇÃO</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Choose Again -->
+
+  <!-- START: Time Unavailable -->
+  <div class="modal fade" id="timeUnavailable" tabindex="-1" role="dialog" aria-labelledby="timeUnavailableLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--time-unavailable" role="document">
+      <div class="modal-content">
+        <div class="modal-body body--time-unavailable">
+          <div class="body--time-unavailable__inner">
+            <p class="time-unavailable--text">Horário indisponível</p>
+            <p class="time-unavailable--text">A loja de retirada não funciona no horário selecionado. Por favor, escolha um dos horários abaixo.</p>
+            <table>
+              <tr>
+                <td colspan="3"><small>Segunda à sexta</small></td>
+              </tr>
+              <tr>
+                <td>08:00 - 18:00</td>
+                <td>08:00 - 12:00</td>
+                <td>12:00 - 20:00</td>
+              </tr>
+
+              <tr>
+                <td colspan="3"><small>Sábado</small></td>
+              </tr>
+              <tr>
+                <td>08:00 - 12:00</td>
+                <td>12:00 - 16:00</td>
+              </tr>
+
+              <tr>
+                <td colspan="3"><small>Domingo e Feriados</small></td>
+              </tr>
+              <tr>
+                <td>10:00 - 12:00</td>
+                <td>12:00 - 16:00</td>
+              </tr>
+            </table>
+            <a href="#" class="button large flat contrast shadow block">ALTERAR DATA OU HORÁRIO</a>
+            <a href="#" class="button large flat contrast shadow block">ALTERAR LOJA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Time Unavailable -->
+
+  <!-- START: Terms and Conditions  -->
+  <div class="modal fade" id="termsAndConditions" tabindex="-1" role="dialog" aria-labelledby="termsAndConditionsLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--terms-conditions" role="document">
+      <div class="modal-content">
+        <div class="modal-header header--terms-conditions">
+          <h6 class="modal-title">Termos e Condições</h6>
+        </div>
+        <div class="modal-body body--terms-conditions">
+          <div class="body--terms-conditions__inner">
+            <p class="terms-conditions--text">
+              <strong>Para alugar um veículo na Unidas, você deverá:</strong><br><br>
+              - Apresentar um documento de identidade e CPF. A apresentação do RG ou CNH original que contenha o número do CPF dispensa a apresentação deste.<br>
+              - Apresentar cartão de crédito nominal para a operação de pré-autorização e ter as suas informações aprovadas pela Unidas. Não serão aceitos cartões de débito ou pré-pago.<br>
+              - Para conduzir o veículo locado, deverá ser apresentada a Carteira de Habilitação válida e emitida em território nacional.<br>
+              - Caso o cliente não preencha o perfil exigido, poderá indicar um condutor. Neste caso, o cliente tem ciência e concorda que deverá abster-se de conduzir o veículo locado e que assumirá todas as responsabilidades pelos atos praticados pela pessoa por ele indicada.<br>
+              - A regra para locação de veículos a estrangeiros deve ser consultada na loja de retirada do veículo.<br><br>
+              <strong>Condições</strong><br><br>
+              - O período mínimo de locação é de 1 (uma) diária de 24 horas, e o período máximo são de 30 diárias. Caso o cliente queira permanecer com o veículo e ele não estiver reservado para outro cliente, após esse período o contrato será renovado automaticamente e a tarifa será cobrada de acordo com o novo período de utilização.<br>
+              - Para locações entre 1 e 20 diárias, a quilometragem é livre. Para locações entre 21 e 30 diárias, é estipulado um limite de 4.500 quilômetros rodados para todo o período. Será cobrado um valor para cada quilômetro excedido conforme tarifário presente na loja, bem como resumo da reserva realizada no site.<br>
+              - O cliente pode nomear até 4 (quatro) motoristas adicionais, implicando no pagamento da taxa diária vigente.<br>
+              - A devolução em outra loja será permitida somente com a autorização da loja de origem e o pagamento da respectiva taxa de retorno.<br>
+              - Caso o veículo do grupo escolhido no ato da reserva não esteja disponível no dia da retirada, a Unidas disponibilizará outro veículo de um grupo superior. Nesse caso, os valores das diárias de locação e das diárias de proteção cobradas serão correspondentes ao veículo escolhido no ato da reserva e indisponível no momento da retirada.<br>
+              - O pagamento da locação deverá ser realizado no momento de abertura do contrato.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Terms and Conditions -->
+
+  <!-- START: Vehicular Protection  -->
+  <div class="modal fade" id="vehicularProtection" tabindex="-1" role="dialog" aria-labelledby="vehicularProtectionLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--vehicular-protection" role="document">
+      <div class="modal-content">
+        <div class="modal-header header--vehicular-protection">
+          <h6 class="modal-title">Proteção Veicular</h6>
+        </div>
+        <div class="modal-body body--vehicular-protection">
+          <div class="body--vehicular-protection__inner">
+            <p class="vehicular-protection--text">
+              <span class="vehicular-protection--headline">
+                <img src="./../../media/sprites/icon-beemhere.png" alt=""> Super
+              </span>
+              Esta opção garante a proteção ao veículo locado em caso de acidente, incêndio, furto, roubo, perda total e pequenas avarias, além da cobertura de danos corporais a ocupantes do veículo e de danos materiais e corporais a terceiros. Em caso de sinistro, será obrigatória a participação do locatário até o limite de:<br><br>
+            </p>
+            <table>
+              <tr>
+                <td>Grupos AM, B, BM, E, C, CA, G1, CG, SM, T</td>
+                <td>R$500,00</td>
+              </tr>
+              <tr>
+                <td>Grupos I, SV, AT, AD</td>
+                <td>R$800,00</td>
+              </tr>
+              <tr>
+                <td>Grupos SL</td>
+                <td>R$1000,00</td>
+              </tr>
+              <tr>
+                <td>Grupos J</td>
+                <td>R$1250,00</td>
+              </tr>
+            </table>
+            <p class="vehicular-protection--text">
+              Os valores das coberturas para casos de acidente com o carro locado que envolvam terceiros, independente do número de pessoas no veículo do terceiro ou envolvidas no acidente, serão de até R$50.000 e para danos materiais e R$100.000 para danos corporais. A cobertura de danos corporais em caso de acidente é de até R$ 20.000, por ocorrência de sinistro, para todos ocupantes do carro.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Vehicular Protection -->
+
+  <!-- START: Group Features  -->
+  <div class="modal fade" id="groupFeatures" tabindex="-1" role="dialog" aria-labelledby="groupFeaturesLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--group-features" role="document">
+      <div class="modal-content">
+        <div class="modal-header header--group-features">
+          <h6 class="modal-title">Características do Grupo</h6>
+        </div>
+        <div class="modal-body body--group-features">
+          <div class="body--group-features__inner">
+            <h4 class="group-features--headline">Econômico sem Ar - Grupo A</h4>
+            <h5 class="group-features--subtitle">Fiat Uno, Volkswagen Gol ou similares</h5>
+
+            <ul class="group-features--list">
+              <li><span class="wrapper-image"><img src="./../../media/sprites/doors.png" alt=""></span> 4 Portas</li>
+              <li><span class="wrapper-image"><img src="./../../media/sprites/air-conditioning.png" alt=""></span> Ar Condicionado</li>
+              <li><span class="wrapper-image"><img src="./../../media/sprites/five-places.png" alt=""></span> 5 lugares</li>
+              <li><span class="wrapper-image"><img src="./../../media/sprites/hydraulic-steering.png" alt=""></span> Direção Hidráulica</li>
+              <li><span class="wrapper-image"><img src="./../../media/sprites/air-bag.png" alt=""></span> Air Bag</li>
+            </ul>
+
+            <a href="#" class="button large flat contrast shadow block">OK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Group Features -->
+
+  <!-- START: Subtotal  -->
+  <div class="modal fade" id="subtotal" tabindex="-1" role="dialog" aria-labelledby="subtotalLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--subtotal" role="document">
+      <div class="modal-content">
+        <div class="modal-body body--subtotal">
+          <button type="button" class="close close--subtotal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="body--subtotal__inner">
+            <div id="price-summary" class="section">
+              <div class="calculate-wrap">
+                <h2>Subtotal</h2>
+  
+                <div id="summary-booking" class="accordion active">
+                  <div class="accordion__header">
+                    <h3 class="accordion__title">
+                      Diária e Hora Extra
+                      <small><strong>GRUPO A</strong> 4 diárias</small>
+                    </h3>
+                    <button class="toggle"></button>
+                  </div>
+                  <div class="accordion__content">
+                    <ul class="summary-list">
+                      <li>
+                        <div class="summary-list__description">Diária KM Livre <b>(4 x 145,00)</b></div>
+                        <div class="summary-list__price" data-price="579.99"><b>R$579,99</b></div>
+                      </li>
+                      <li>
+                        <div class="summary-list__description">Hora Extra <b>(4 x 24,17)</b></div>
+                        <div class="summary-list__price" data-price="96.70"><b>R$96,70</b></div>
+                      </li>
+                      <li>
+                        <div class="summary-list__description"></div>
+                        <div class="summary-list__price"><span class="summary-list__result" data-price-total="676.69">R$<span>676.69</span></span></div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="accordion__hidden">
+                    <div class="row">
+                      <div class="col"><b class="m-r-10">proteção com Ar</b> 4 diárias</div>
+                      <div class="col-auto"><span class="summary-list__result">R$<span>243,99</span></span></div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="alert-info--modal">
+                  Em função das horas adicionais, será cobrada uma diária a mais para os opcionais.
+                </div>
+  
+                <div id="summary-protections" class="accordion active">
+                  <div class="accordion__header">
+                    <h3 class="accordion__title">
+                      Proteções e Acessórios
+                    </h3>
+                    <button class="toggle"></button>
+                  </div>
+                  <div class="accordion__content">
+                    <ul class="summary-list">
+                      <li>
+                        <div class="summary-list__description">Proteção Parcial <b>(2 und. x 2 x 28,00)</b></div>
+                        <div class="summary-list__price" data-price="579.99"><b>R$579,99</b></div>
+                      </li>
+                      <li>
+                        <div class="summary-list__description"></div>
+                        <div class="summary-list__price"><span class="summary-list__result" data-price-total="579.99">R$<span>579.99</span></span></div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="accordion__hidden">
+                    <div class="row">
+                      <div class="col"><b class="m-r-10"><span class="list-protections">GPS</span></b> e mais <span class="total-protections">7</span> itens</div>
+                      <div class="col-auto"><span class="summary-list__result">R$<span>579,99</span></span></div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div id="summary-rates" class="accordion active">
+                  <div class="accordion__header">
+                    <h3 class="accordion__title">
+                      Taxas
+                    </h3>
+                    <button class="toggle"></button>
+                  </div>
+                  <div class="accordion__content">
+                    <ul class="summary-list">
+                      <li>
+                        <div class="summary-list__description">Taxa administrativa <b>(12,00%)</b></div>
+                        <div class="summary-list__price" data-price="243.99"><b>R$579,99</b></div>
+                      </li>
+                      <li>
+                        <div class="summary-list__description">Taxa de devolução em outra cidade <b>(R$0,80 x 350km)</b></div>
+                        <div class="summary-list__price"><b>R$579,99</b></div>
+                      </li>
+                      <li>
+                        <div class="summary-list__description"></div>
+                        <div class="summary-list__price"><span class="summary-list__result" data-price-total="243.99">R$<span>243.99</span></span></div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="accordion__hidden">
+                    <div class="row">
+                      <div class="col"><b class="m-r-10"><span class="list-protections">GPS</span></b> e mais <span class="total-protections">7</span> itens</div>
+                      <div class="col-auto"><span class="summary-list__result">R$<span>579,99</span></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="price-summary__total">
+                <div class="no-discount">
+                  Valor (sem desconto): <strong>R$ 458,50</strong>
+                </div>
+                <div class="discount">
+                  Valor total <small>(com desconto)</small>
+                </div>
+  
+                <div class="price-feature">
+                  <div class="price price--modal">
+                    <div class="price__inner--first">
+                      <span class="price__coin">R$</span>
+                      <span class="price__ammount">1500,</span>
+                      <span class="price__cents">67</span>
+                    </div>
+                    <div class="price__plots price__inner--last">
+                      <span class="plots-text">ou parcelado em:</span>
+                      <span class="plots-number">
+                        6x <small>R$</small>
+                        <span class="plots-number--ammount">250,</span>
+                        <span class="plots-number--cents">11</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div id="stores-details" class="box-group">
+                <div class="box outlined">
+                  <div class="box__title small">Loja ABC</div>
+                  <div class="box__content">
+                    <strong>Observações:</strong> A loja escolhida não tem box no aeroporto, mas atende no aeroporto sem custo. Para esse serviço informar a cia aerea e o numero de seu vôo no ato da reserva. Feitas essas confirmações haverá um colaborador uniformizado na saída do desembarque.
+                  </div>
+                </div>
+  
+                <div class="box outlined">
+                  <div class="box__title small">Loja ABC</div>
+                  <div class="box__content">
+                    <strong>Observações:</strong> A loja escolhida não tem box no aeroporto, mas atende no aeroporto sem custo. Para esse serviço informar a cia aerea e o numero de seu vôo no ato da reserva. Feitas essas confirmações haverá um colaborador uniformizado na saída do desembarque.
+                  </div>
+                </div>
+              </div>
+  
+              <div class="box outlined compact">
+                <div class="row is-small align-items-center">
+                  <div class="col">
+                    <h3 class="box__title m-b-0">Termos e Condições</h3>
+                  </div>
+                  <div class="col-auto">
+                    <a href="#" class="button link"><i class="icon-info"></i> <span>saiba mais</span></a>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Subtotal -->
+
+  <!-- START: Cancel reservation  -->
+  <div class="modal fade" id="cancelReservation" tabindex="-1" role="dialog" aria-labelledby="cancelReservationLabel" aria-hidden="true">
+    <div class="modal-dialog dialog--cancel-reservation" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">Cancelar reserva</h6>
+          <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body body--cancel-reservation">
+          <div class="body--cancel-reservation__inner">
+            <h3 class="cancel-reservation--title">
+              Por favor, ajude-nos a entender<br>
+              o motivo do seu cancelamento?
+            </h3>
+            <form action="#">
+              <div class="form-group has-value">
+                <label>
+                  <input type="checkbox" class="checkbox">
+                  <span>Preço</span>
+                </label>
+              </div>
+              <div class="form-group has-value">
+                <label>
+                  <input type="checkbox" class="checkbox">
+                  <span>Tenho outra reserva para o mesmo período</span>
+                </label>
+              </div>
+              <div class="form-group has-value">
+                <label>
+                  <input type="checkbox" class="checkbox">
+                  <span>Cancelei minha viagem</span>
+                </label>
+              </div>
+              <div class="form-group has-value">
+                <label>
+                  <input type="checkbox" class="checkbox">
+                  <span>Minha data/destino de viagem foram alterados</span>
+                </label>
+              </div>
+              <div class="form-group has-value">
+                <label>
+                  <input type="checkbox" class="checkbox">
+                  <span>Estava apenas fazendo uma cotação</span>
+                </label>
+              </div>
+              <div class="form-group has-value">
+                <label>
+                  <input type="checkbox" class="checkbox">
+                  <span>Outros</span>
+                </label>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer footer--cancel-reservation">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <p>Tem certeza que deseja cancelar sua reserva número <strong>13444937?</strong></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="#" class="button outlined secondary block">Manter reserva</a>
+              </div>
+              <div class="col">
+                <a href="#" class="button flat contrast block shadow--light-2x">Cancelar reserva</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Cancel reservation -->
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+@mixin gridbs($val) {
+  &{
+    margin-left: -$val;
+    margin-right: -$val;
+
+    > *[class*="col"]{
+      padding-left: $val;
+      padding-right: $val;
+    }
+  }
+
+}
+
+
+@mixin section($val) {
+  .section{
+    padding-top: $val;
+    padding-bottom: $val;
+
+    &.is-small{
+      padding-top: $val / 2;
+      padding-bottom: $val / 2;
+    }
+
+    &.is-medium{
+      padding-top: $val * 2;
+      padding-bottom: $val * 2;
+    }
+
+    &.is-large{
+      padding-top: $val * 4;
+      padding-bottom: $val * 4;
+
+      @include max-screen(1000px){
+        padding-top: $val * 3;
+        padding-bottom: $val * 3;
+      }
+    }
+
+  }
+
+  .section-top{
+    padding-top: $val;
+
+    &.is-small{
+      padding-top: $val / 2;
+    }
+
+    &.is-medium{
+      padding-top: $val * 2;
+    }
+
+    &.is-large{
+      padding-top: $val * 4;
+
+      @include max-screen(1000px){
+        padding-top: $val * 3;
+      }
+    }
+
+  }
+
+  .section-bottom{
+    padding-bottom: $val;
+
+    &.is-small{
+      padding-bottom: $val / 2;
+    }
+
+    &.is-medium{
+      padding-bottom: $val * 2;
+    }
+
+    &.is-large{
+      padding-bottom: $val * 4;
+
+      @include max-screen(1000px){
+        padding-bottom: $val * 3;
+      }
+    }
+
+  }
+
+
+}

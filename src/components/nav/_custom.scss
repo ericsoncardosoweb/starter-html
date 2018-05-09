@@ -1,0 +1,21 @@
+.docs-sidebar{
+
+  .nav{
+    > li{
+      font-size: 18px; 
+      margin-bottom: 5px;
+      padding: 5px 0; 
+
+      @include linkreset();
+
+      &:hover{
+        color: palette(brand, secondary);
+        
+        &:not(.active) > a, > a{
+          border-left: solid palette(brand, secondary) 2px!important;
+        }
+      }
+    }
+  }
+
+}

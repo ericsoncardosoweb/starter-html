@@ -1,0 +1,160 @@
+@keyframes hover-color {
+  from {
+    border-color: $border-color;
+  }
+
+  to {
+    border-color: $main-color;
+  }
+}
+
+.radio,
+.checkbox {
+  position: absolute;
+  display: none;
+}
+.radio[disabled],
+.checkbox[disabled] {
+  cursor: not-allowed;
+}
+
+.radio,
+.checkbox {
+
+  & + span{
+    position: relative;
+    display: block;
+    padding-left: 25px;
+    cursor: pointer;
+    vertical-align: middle;
+
+    &.uppercase{
+      text-transform: uppercase;
+      font-size: 12px;
+      padding-top: 3px;
+    }
+
+    &:hover {
+      &:before {
+        animation-duration: 0.4s;
+        animation-fill-mode: both;
+        animation-name: hover-color;
+      }
+    }
+    &:before {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      display: inline-block;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      content: '';
+      border: 1px solid $border-color;
+      box-shadow: none;
+    }
+    &:after {
+      position: absolute;
+      display: none;
+      content: '';
+      top: 3px;
+      left: 7px;
+    }
+
+  }//span
+
+  // Right
+  &.right{
+
+    & + span{
+      padding-left: 0;
+      padding-right: 25px;
+
+      &:before{
+        left: initial;
+        right: 0;
+      }
+
+      &:after{
+        left: initial;
+        right: 6px;
+      }
+
+    }//span
+  }//.right
+
+
+}
+
+.radio[disabled] + span,
+.checkbox[disabled] + span {
+  cursor: not-allowed;
+  color: $disabled-color;
+
+  &:hover,
+  &:before,
+  &:after {
+    cursor: not-allowed;
+  }
+  &:hover {
+    &:before {
+      border: 1px solid $disabled-color;
+      animation-name: none;
+    }
+  }
+  &:before {
+    border-color: $disabled-color;
+  }
+}
+
+
+.radio:checked + span,
+.checkbox:checked + span {
+  &:before {
+    animation-name: none;
+  }
+  &:after {
+    display: block;
+  }
+}
+
+// Sizes
+.form-large {
+  .radio,
+  .checkbox {
+
+    & + span{
+      &:before {
+        top: 2px;
+        width: 22px;
+        height: 22px;
+      }
+      &:after {
+        top: 9px;
+        left: 7px;
+      }
+
+    }
+  }
+
+  .checkbox {
+    
+    & + span{
+      padding-left: 30px;
+      
+      &:before{
+        width: 24px;
+        top: 0;
+      }
+
+      &:after {
+        top: 2px;
+        left: 9px;
+        width: 7px;
+        height: 14px;
+        border-width: 3px;
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,7 @@
+$radio-size: 18px;
+$checkbox-size: 18px;
+$dot-size: 8px;
+$border-color: $input-border-color;
+$main-color: palette(brand, primary);
+$disabled-color: lighten($input-text-color, 14%);
+$disabled-checked-color: lighten(palette(brand, primary), 30%);

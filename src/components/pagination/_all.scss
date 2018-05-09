@@ -1,0 +1,95 @@
+/*==================================
+=            PAGINATION            =
+==================================*/
+.pagination{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  li{
+    text-align: center;
+    color: palette(brand, primary);
+    font-size: em(22);
+    margin: 5px; 
+    font-weight: 300;
+    transition: all 0.6s;
+
+    &.current{
+      span{
+        background: palette(brand, clean);
+        border: 1px solid rgba(palette(brand, secondary), 0.3);
+      }
+    }
+
+    &:hover{
+      color: rgba(palette(brand, secondary), 0.6);
+      a, span{
+        background: palette(brand, clean);
+      }
+    }
+
+    a, span{
+      display: block;
+      padding: 12px 15px;
+      border-radius: 5px;
+      line-height: 1;
+      transition: none;
+    }
+
+    @include min-screen(992px) {
+      font-size: em(32);
+
+      a, span{
+        min-width: 64px;
+      }
+    }
+
+    &.more{
+      width: 40px;
+
+      &, &:hover{
+        background: transparent;
+        border: 0; 
+      }
+    }
+
+    .elips{
+      position: relative;
+      margin: 0 auto;
+      
+      &, &:before, &:after{
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: palette(brand, primary);
+      }
+
+      &:before, &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+      }
+
+      &:before{
+        left: -9px;
+      }
+
+      &:after{
+        right: -9px;
+      }
+
+    }
+
+    @include linkreset();
+
+  }
+
+
+
+
+}
+/*=====  End of PAGINATION  ======*/

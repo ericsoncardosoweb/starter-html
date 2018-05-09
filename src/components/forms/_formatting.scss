@@ -1,0 +1,341 @@
+/*----------  Form Groups  ----------*/
+.form-group{
+  display: inline-block;
+  width: 100%;
+  flex: 0 1 auto;
+  margin: 15px 0;
+
+  >.row{
+    @include gridbs(12px);
+
+    &.align-items-center{
+      >*{
+        margin: 0 0;
+      }
+    }
+  }
+
+
+}//.form-group
+
+/*----------  Labels  ----------*/
+label{
+  display: block;
+  color: palette(brand, secondary);
+  font-size: em(16);
+  font-weight: 400;
+  margin: 0 0 5px;
+
+  .form-large &{
+    font-size: em(18);
+    margin-bottom: 10px;
+  }
+
+  small{
+    display: inline-block;
+    color: palette(brand, light);
+    font-size: 13px;
+  }
+
+  &.input{
+    position: relative;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &.sr-only{
+    height: 21px;
+    font-size: 0;
+    color: transparent;
+  }
+
+}//label
+
+
+/*----------  Form White  ----------*/
+.form-white{
+  color: palette(brand, ice);
+
+  label{
+    color: palette(brand, ice);
+  }
+
+
+}
+
+/*----------  Form Shadow  ----------*/
+.form-shadow {
+  @include form_fields {
+    box-shadow: $input-shadow;
+    font-size: 14px;
+  };
+
+  .input{
+    &:not(.focus), &:not(.has-value) {
+      .placeholder{
+        color: palette(brand, secondary);
+      }
+    }
+  }
+
+}
+
+/*----------  Form Styles  ----------*/
+form{
+  a.link{
+    color: palette(brand, primary-light);
+    display: inline-block;
+    line-height: 1;
+    
+    &:after{
+      content: "";
+      display: block; 
+      width: 100%;
+      height: 1px;
+      background: palette(brand, primary-light);
+      margin-top: 2px;
+    }
+  }
+}
+
+/*----------  Groups  ----------*/
+.group-divider {
+  display: flex;
+  flex-wrap: no-wrap;
+  width: 100%;
+
+  &.format-date{
+    width: 250px;
+
+    .form-group{
+      &:first-child{
+        flex: 0 0 60%;
+        max-width: 60%;
+      }
+      &:last-child{
+        flex: 0 0 40%;
+        max-width: 40%;
+      }
+    }
+  }
+
+  .form-group {
+    position: relative;
+
+    &:first-child{
+
+       &.has-value .input {
+        &:after{
+          border-left-color: palette(brand, ice);
+        }
+      }
+
+      input, select, .dropdown{
+        border-radius: $input-radius 0 0 $input-radius;
+
+        .form-shadow &{
+          border-right: 0;
+        }
+      }
+
+      .input{
+        position: relative;
+        border-right: solid 1px $input-border-color;
+
+        &:after, &:before {
+          left: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          z-index: 2;
+          transition: all 0.3s;
+        }
+
+        &:after {
+          border-color: rgba(136, 183, 213, 0);
+          border-left-color: #fff;
+          border-width: 7px;
+        }
+        &:before {
+          border-color: rgba(194, 225, 245, 0);
+          border-left-color: $input-border-color;
+          border-width: 8px;
+        }
+
+        &.has-value{
+          &:after{
+            border-left-color: palette(brand, ice);
+          }
+        }
+      }//.input
+
+
+    }
+
+    &:last-child{
+      input, select, .dropdown{
+        border-radius: 0 $input-radius $input-radius 0;
+        border-left: 0;
+      }
+    }
+  }
+
+  &.focused{
+    .input{
+      &:after, &:before{
+        opacity: 0;
+      }
+
+      &.focus{
+        position: relative;
+        z-index: 2;
+        border-right: 0;
+
+        @include form_fields {
+          border: solid 1px $input-border-color;
+          border-radius: $input-radius;
+          background-color: #FFF;
+          box-shadow: rgba(#000, 0.4) 0 0 15px;
+        }
+      }
+
+      &:not(.focus) {
+        @include form_fields {
+          background-color: palette(brand, ice);
+          border-color: palette(brand, ice);
+        }
+      }
+
+    }
+  }//focused
+
+  &.has-one{
+    .form-group{
+      display: none;
+
+      &:first-child{
+        display: block;
+      }
+
+      .input{
+        border-right: 0;
+
+        input{
+          border-radius: $input-radius;
+        }
+        &:after, &:before{
+          opacity: 0;
+          transition: none;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+.zip-code-field{
+  .help-text{
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+
+/*----------  Validations  ----------*/
+.form-field{
+
+  .help-text{
+    font-size: 13px;
+    display: block;
+  }
+
+  &.has-error{
+    @include form_fields {
+      border-color: palette(stage, danger);
+      background-color: #FFF;
+    }
+
+    .radio + span:before, .checkbox + span:before{
+      border-color: palette(stage, danger);
+    }
+
+    .radio, .checkbox{
+      & ~ .help-text{
+        display: none;
+      }
+    }
+
+    .help-text, .help-block{
+      color: palette(stage, danger);
+    }
+
+    &{
+      @include form_fields {
+        background-image: url("data:image/svg+xml;utf8,<svg fill='#{palette(stage, danger)}' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+      }
+    }
+
+    .input{
+      &.right{
+        i, .svg{
+          display: none;
+        }
+      }
+
+      &.double{
+        i, .svg{
+          &:last-child{
+            display: none;
+          }
+        }
+      }
+
+
+    }//input
+
+  }//.has-error
+
+  &.has-success{
+    @include form_fields {
+      border-color: palette(stage, success);
+      background-color: #FFF;
+    }
+
+    &{
+      @include form_fields {
+        background-image: url("data:image/svg+xml;utf8,<svg fill='#{palette(stage, success)}' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M0 0h24v24H0z' fill='none'/><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+      }
+    }
+
+    .input{
+      &.right{
+        i, .svg{
+          display: none;
+        }
+      }
+
+      &.double{
+        i, .svg{
+          &:last-child{
+            display: none;
+          }
+        }
+      }
+    }
+
+
+  }
+
+}

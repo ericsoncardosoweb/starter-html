@@ -1,0 +1,286 @@
+@mixin buttonsHelpers() {
+
+  &.link{
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+
+    span:after{
+      content: "";
+      display: block;
+      width: 0;
+      height: 1px;
+      background: rgba(#000, 0.15);
+      background: currentColor;
+      transition: all 0.3s;
+    }
+
+    &:hover, &:active, &:focus{
+      background: transparent;
+
+      span:after{
+        width: 100%;
+      }
+    }
+
+    &--icon {
+      &:after{
+        display: none;
+      }
+    }
+    
+  }//link
+
+  &.compact{
+    padding: rem($btn-gutter - 7);
+  }//.compact
+
+  &.dense{
+    padding: rem($btn-gutter - 12) rem($btn-gutter - 7);
+  }//.dense
+
+  &.min-w {
+    min-width: $btn-min-w;
+  }//.min-w
+
+  &.block {
+    width: 100%;
+
+    & + * {
+      margin-top: 10px;
+    }
+  }//.block
+
+  &.rounded {
+    border-radius: $btn-bd-radius;
+
+    &--top {
+      border-radius: $btn-bd-radius $btn-bd-radius 0 0;
+    }
+
+    &--bottom {
+      border-radius: 0 0 $btn-bd-radius $btn-bd-radius;
+    }
+  }//.rounded
+
+  &.circle {
+    border-radius: 50%;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+    }
+
+    &:before{
+      border: 2px solid transparent;
+    }
+
+    &:after{
+      border: 0px solid transparent;
+    }
+
+    &:hover{
+      background: transparent;
+
+      &:before {
+        border-top-color: darken(palette(grey, light), 8%);
+        border-right-color: darken(palette(grey, light), 8%);
+        border-bottom-color: darken(palette(grey, light), 8%);
+        transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
+      }
+      &:after{
+        border-top: 2px solid darken(palette(grey, light), 8%);
+        border-left-width: 2px;
+        border-right-width: 2px;
+        transform: rotate(270deg);
+        transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s;
+      }
+    }
+
+
+
+  }//.circle
+
+  &.square {
+    border-radius: 0!important;
+  }//.square
+
+  &.uppercase{
+    text-transform: uppercase;
+  }
+
+  &.lowercase{
+    text-transform: lowercase;
+  }
+
+  &.left{
+    text-align: left;
+
+    i{
+      margin-left: rem($btn-gutter + 20)!important;
+    }
+  }
+
+  &.dash{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+    span{
+      &:first-child:not(:last-child) {
+      }
+
+      &:last-child:not(:first-child) {
+        text-align: right;
+      }
+    }
+
+    &.contrast{
+      i{
+        &:after{
+          background: rgba(palette(brand, migrate), 0.2);
+        }
+      }
+    }
+
+    i{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 rem($btn-gutter);
+      position: relative;
+
+      &:after{
+        content: "";
+        display: block;
+        height: 300%;
+        width: 1px;
+        background: inherit;
+        background: currentColor;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:first-child:not(:last-child) {
+        left: 0;
+        padding-left: 0;
+        margin-right: rem($btn-gutter);
+
+        &:after{
+          right: 0;
+        }
+      }
+
+
+      &:last-of-type {
+        right: 0;
+        padding-right: 0;
+        margin-left: rem($btn-gutter);
+
+        &:after{
+          left: 0;
+        }
+
+      }
+
+
+    }
+
+    &:hover{
+      &:not(.flat){
+        i{
+          &:after{
+            width: 2px;
+            transition: width 0.25s ease-out ;
+          }
+        }
+      }
+    }
+  }
+
+  &.loading{
+    padding-right: 60px;
+    position: relative;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'
+      width='40px' height='40px' viewBox='0 0 40 40' enable-background='new 0 0 40 40' xml:space='preserve'><path opacity='0.2' fill='#{palette(brand, primary)}' d='M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+      s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+      c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z'/> <path fill='#{palette(brand, primary)}' d='M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+      C22.32,8.481,24.301,9.057,26.013,10.047z'> <animateTransform attributeType='xml' attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='0.5s' repeatCount='indefinite'/></path></svg>");
+    background-size: 24px;
+    background-position: calc(100% - 7px) center;
+    background-repeat: no-repeat;
+
+    &.flat{
+
+      &.primary, &.secondary, &.danger, &.facebook{
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'
+        width='40px' height='40px' viewBox='0 0 40 40' enable-background='new 0 0 40 40' xml:space='preserve'><path opacity='0.2' fill='#{rgba(#FFF, 1)}' d='M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+        s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+        c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z'/> <path fill='#{rgba(#FFF, 1)}' d='M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+        C22.32,8.481,24.301,9.057,26.013,10.047z'> <animateTransform attributeType='xml' attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='0.5s' repeatCount='indefinite'/></path></svg>");
+      }
+    }
+
+    &.dash{
+      i{
+        display: none;
+      }
+    }
+  }
+
+  &.icon{
+    padding: rem($btn-gutter - 6)!important;
+  }
+
+  &.shadow {
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover, &:focus{
+      box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &.shadow-2x {
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2), 0px 2px 12px 0px rgba(0, 0, 0, 0.14), 0px 1px 25px 0px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover, &:focus{
+      box-shadow: 0px 2px 18px -1px rgba(0, 0, 0, 0.2), 0px 4px 15px 0px rgba(0, 0, 0, 0.14), 0px 1px 20px 0px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  // &.shadow--light {
+  //   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  //   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  //   &:hover, &:focus{
+  //     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  //   }
+  // }
+
+  &.shadow--light-2x {
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.02), 0 5px 15px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.02);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover, &:focus{
+      box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0 10px 30px 0 rgba(0, 0, 0, 0.14), 0 1px 20px 0 rgba(0, 0, 0, 0.08);
+    }
+  }
+
+}//helpers
+
+.list-buttons {
+  display: inline-block;
+
+  .button{
+    margin: 5px 2.5px;
+  }
+}

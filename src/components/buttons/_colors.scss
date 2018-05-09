@@ -1,0 +1,11 @@
+/*----------  Colors  ----------*/
+@each $color-name, $color-code in $btncolors {
+  &.#{$color-name} {
+    background: $color-code!important;
+    color: #FFF;
+
+    &:hover, &:active, &:visited{
+      box-shadow: rgba(#000, 0.3) inset 0 0 400px;
+    }
+  }
+}

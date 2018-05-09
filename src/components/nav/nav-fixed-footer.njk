@@ -1,0 +1,27 @@
+<nav class="nav-bar nav--fixed--bottom">
+	<ul>
+		<li class="nav__item"> 
+			<button class="button toggle icon" data-toggle="app" data-target="#search-fixed">
+			  <svg class="svg svg-search"><use xlink:href="#svg-search"></use></svg>
+			</button> 
+		</li>
+		<li class="nav__item">
+			<button class="button toggle icon" data-toggle="app" data-target="#login">
+			  <svg class="svg svg-user"><use xlink:href="#svg-user"></use></svg>
+			</button>
+		</li>
+		<li class="nav__item">
+			<button class="button toggle icon" data-toggle="app" data-target="#wishlist">
+			  <svg class="svg svg-heart"><use xlink:href="#svg-heart"></use></svg>
+			</button>
+		</li>
+		<li class="nav__item">
+			<a class="button icon" href="#">
+			  <svg class="svg svg-bag"><use xlink:href="#svg-bag"></use></svg>
+			</a>
+		</li> 
+	</ul>
+
+</nav> 
+
+{% include "../search/fixed.njk" %}

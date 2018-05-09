@@ -1,0 +1,21 @@
+/*=============================================
+=            FORMS            =
+=============================================*/
+// Variables
+$input-text-color: palette(text, light);
+$input-border-color: palette(brand, light);
+$input-font-size: 13px;
+$input-font-family: $font-primary;
+$input-radius: 3px;
+$input-shadow: rgba(0, 0, 0, 0.17) 0px 5px 21px;
+
+// Imports
+@import
+  "fields",
+  "checks/all",
+  "dropdown",
+  "formatting",
+  "validations",
+  "datepicker",
+  "register-reservation",
+  "quantity";

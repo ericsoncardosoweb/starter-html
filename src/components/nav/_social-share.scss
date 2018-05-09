@@ -1,0 +1,108 @@
+.social-share{
+	text-align: center;
+	padding: 0px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	a {
+		width: 42px;
+		height: 42px;
+		margin: 5px;
+		border-radius: 50%;
+		border: 2px solid #ccc;
+		color: #ccc;
+		font-size: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.4s;
+
+		&.facebook{
+			border-color: $color-facebook;
+			color: $color-facebook;
+
+			&:hover{
+				border-color: $color-facebook-hover;
+				color: $color-facebook-hover;
+			}
+		}
+
+		&.twitter{
+			border-color: $color-twitter;
+			color: $color-twitter;
+
+			&:hover{
+				border-color: $color-twitter-hover;
+				color: $color-twitter-hover;
+			}
+		}
+
+		&.google-plus{
+			border-color: $color-google-plus;
+			color: $color-google-plus;
+
+			&:hover{
+				border-color: $color-google-plus-hover;
+				color: $color-google-plus-hover;
+			}
+		}
+
+		&.linkedin{
+			border-color: $color-linkedin;
+			color: $color-linkedin;
+
+			&:hover{
+				border-color: $color-linkedin-hover;
+				color: $color-linkedin-hover;
+			}
+		}
+
+		&.pinterest{
+			border-color: $color-pinterest;
+			color: $color-pinterest;
+
+			&:hover{
+				border-color: $color-pinterest-hover;
+				color: $color-pinterest-hover;
+			}
+		}
+
+		&.email{
+			border-color: $color-email;
+			color: $color-email;
+
+			&:hover{
+				border-color: $color-email-hover;
+				color: $color-email-hover;
+			}
+		}
+
+		&.whatsapp{
+			border-color: $color-whatsapp;
+			color: $color-whatsapp;
+
+			&:hover{
+				border-color: $color-whatsapp-hover;
+				color: $color-whatsapp-hover;
+			}
+		}
+
+		&:hover{
+			transform: translateY(-3px);
+		}
+
+	}
+
+
+}//.social-share
+
+.social-share-title{
+	font-family: 'Arial', sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 1;;
+	letter-spacing: 0.1em;
+	text-align: center;
+	margin: 0 0 15px;
+}

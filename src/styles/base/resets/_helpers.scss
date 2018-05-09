@@ -1,0 +1,63 @@
+.bg-blue-gradient {
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    background: -webkit-gradient(linear, left top, left bottom, from(#bfd6e5), color-stop(#e7f0f6), to($white));
+    background: -webkit-linear-gradient(top, #bfd6e5 0%, #e7f0f6, $white 16%);
+    background: -o-linear-gradient(top, #bfd6e5 0%, #e7f0f6, $white 16%);
+    background: linear-gradient(to bottom, #bfd6e5 0%, #e7f0f6, $white 16%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+  }
+
+  &--internal {
+    &:before {
+      content: "";
+      display: block;
+      background: -webkit-gradient(linear, left top, left bottom, from(#bfd6e5), color-stop(#e7f0f6), to($white));
+      background: -webkit-linear-gradient(top, #bfd6e5 0%, #e7f0f6, $white 50px);
+      background: -o-linear-gradient(top, #bfd6e5 0%, #e7f0f6, $white 50px);
+      background: linear-gradient(to bottom, #bfd6e5 0%, #e7f0f6, $white 50px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 1;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}

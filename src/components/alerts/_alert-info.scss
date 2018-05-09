@@ -1,0 +1,13 @@
+.alert-info{
+  border-top: solid 2px palette(brand, light);
+  background: palette(brand, ice);
+  color: #4A8EB2;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px 20px;
+  margin-bottom: 40px;
+
+  p{
+    font-size: inherit;
+  }
+}

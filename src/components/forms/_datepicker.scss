@@ -1,0 +1,356 @@
+/*==================================
+=            DATEPICKER            =
+https://uxsolutions.github.io/bootstrap-datepicker/
+https://github.com/xdan/datetimepicker //anulado
+==================================*/
+.datepicker{
+  position: relative;
+  width: 100%;
+  border: 0;
+  padding: 0;
+
+  table{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    thead{
+      tr{
+        color: palette(brand, light);
+
+        &:nth-child(2){
+          position: relative;
+
+          th{
+            color: palette(brand, light);
+
+            &:hover{
+              background: transparent;
+              color: palette(brand, primary);
+            }
+            
+            &:nth-child(2){
+              text-align: left;
+              width: 100%;
+              position: relative;
+              left: -35px;
+              font-size: em(24);
+              font-weight: 600;
+
+            }
+
+            &.next, &.prev{
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: initial;
+              right: 0;
+              top: 0;
+              text-align: center;
+              font-family: 'icomoon';
+              font-size: 0;
+              font-weight: 100;
+              z-index: 3;
+
+              &:before{
+                content: "\e90b";
+                font-size: 26px;
+              }
+
+              
+            }
+
+            &.prev{
+              right: 35px;
+
+              &:before{
+                content: "\e909";
+              }
+            }
+          }
+        }
+        
+        &:last-child{
+          
+          th{
+            padding-top: 15px;
+            padding-bottom: 7px;
+            font-size: 9px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    tr.previous{
+      .day{
+        color: palette(brand, light)!important;
+
+        &:before{
+          background: palette(brand, ice)!important;
+          border: solid 1px palette(brand, ice)!important;
+        }
+      }
+    }
+
+    tbody{
+      .previous, .disabled-date, .disabled{ 
+          
+        &, .day{
+          color: palette(brand, light);
+
+          &:before{
+            background: palette(brand, ice);
+            border: solid 1px palette(brand, ice);
+          }
+
+        }
+      }
+
+      td{
+        padding: 4px;
+        color: palette(brand, accent);
+        border: 0;
+        margin: 2px;
+        min-width: 36px;
+        width: 14.28%;
+        height: 34px;
+        font-size: 15px;
+        line-height: 26px;
+        position: relative;
+        
+        &:before{
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: calc(100% - 3px);
+          height: calc(100% - 3px);
+          border: solid 1px palette(brand, light);
+          transform: translate(-50%, -50%);
+          z-index: -1;
+        }
+
+        &.old, &.new{
+          opacity: 0.3;
+          
+          &:before{
+            background: transparent!important;
+          }
+        }
+
+        &.disabled{
+          opacity: 1;
+          color: rgba(palette(brand, accent), .3) !important;
+
+          &:before {
+            border-color: rgba(palette(brand, light), .3);
+            z-index: -1;
+          }
+        }
+        
+        &.old, &.new, &.disabled {
+          &:hover, &:active, &:focus{
+            background: transparent!important;
+            color: palette(brand, accent);
+
+            &:before{
+              background: transparent;
+              // border: solid 1px palette(brand, light);
+            }
+          }
+        }
+        &.old, &.new {
+          visibility: hidden;
+        }
+
+        &.today{ 
+          background: transparent;  
+          color: palette(brand, accent); 
+
+          &.disabled{
+            background: transparent!important;
+            color: rgba(palette(brand, accent), .4)!important;
+          }
+
+          &:before{
+            background: transparent;
+            border: solid 1px palette(brand, primary);
+          }
+
+          & ~ .day{          
+            color: palette(brand, accent);
+
+            &:before{
+              background: transparent;
+            }
+          }
+        }
+
+        &:hover, /*&.active, &:focus,*/ &:active{ 
+          background: transparent!important;
+          color: palette(brand, secondary)!important;
+
+          &:before{
+            background: palette(brand, contrast)!important;
+            border: solid 1px palette(brand, light)!important;
+          }
+        }
+
+        &.active{
+          &:hover{
+            color: palette(brand, secondary);
+          }
+        }
+      }
+    }
+  }
+
+  .datepicker-years{
+     .datepicker-switch{
+      left: 0 !important;
+     }
+     table tbody td:hover, table tbody td:active{
+        background-color: #fff !important;
+     }
+   }
+
+  .datepicker-months{
+    table tbody td:hover, table tbody td:active{
+      background-color: #fff !important;
+    }
+    thead{
+      tr{
+        th{
+          td{
+            .month.active{
+              background-color: #ffde00;
+              background-image: none;
+              color: #005388;
+             }
+          }
+
+          padding-top: 0!important; 
+          padding-bottom: 5px;
+          &.datepicker-switch{
+            left: 0!important;
+            margin-top: 0;
+          } 
+        }
+      }
+    }
+  }
+
+}//.datepicker
+
+.datepicker {
+  table {
+    tr {
+      td {
+        &.active {
+          &.active {
+            background-color: transparent !important;
+            &:before {
+              background-color: palette(brand, contrast)!important;
+            }
+          }
+        }
+        &.day-out {
+          background-color: transparent !important;
+          &:before {
+            background-color: #FFF14D!important;
+          }
+        }
+        &.prev-day {
+          &.active {
+            background-color: transparent !important;
+            &:before {
+              background-color: rgba(palette(brand, contrast), 0.3)!important;
+            }
+          }
+        }
+      }
+    }
+  }
+} 
+
+.day.disabled {
+  &:hover, &:focus {
+      opacity: 1;
+      color: rgba(78, 122, 150, 0.3) !important;
+      &:before {
+        background: palette(brand, ice)!important;
+        border: solid 1px palette(brand, ice)!important;
+      }
+    }
+  &.previous{
+    &:hover, &:focus {
+      opacity: 1;
+      &:before {
+        background: palette(brand, ice)!important;
+        border: solid 1px palette(brand, ice)!important;
+      }
+    }
+  }
+  &.disabled-date {
+    &:hover, &focus {
+      opacity: 1;
+      color: rgba(78, 122, 150, 0.3) !important;
+      &:before {
+        background: palette(brand, ice) !important;
+      }
+    }
+  }
+}
+
+
+
+.datepicker {
+
+  table{
+
+    tr{
+      td{
+        &.active {
+          background-image: none !important;
+          color: palette(brand, secondary);
+          &:before {
+            border: solid 1px rgba(palette(brand, secondary), 1)!important;
+          }
+        }
+        &.today{
+
+          ~ .day {
+            // color: rgba(palette(brand, accent), .3);
+          }
+        }
+        &.disabled{
+        }
+      }
+      &:nth-child(2){
+
+        th{
+
+          &.next, &.prev {
+          }
+        }
+      }
+    }
+  }
+}
+
+.previous {
+  &.day {
+    &:hover, &:focus {
+      color: rgba(palette(brand, accent), .3)!important;
+      &:before {
+        background: palette(brand, ice)!important;
+        border: solid 1px palette(brand, ice)!important;
+      }
+    }
+  }
+}
+
+/*=====  End of DATEPICKER  ======*/

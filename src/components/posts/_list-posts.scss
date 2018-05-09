@@ -1,0 +1,36 @@
+.posts{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &.center{
+
+  }
+
+  .post{
+    position: relative;
+
+    &.post-simple{
+      display: flex;
+      margin-bottom: 60px;
+
+      .post__date{
+        min-width: 100px;
+        width: 102px;
+        display: inline-block;
+      }
+
+      .post__content{
+        transform: translateY(-5px);
+      }
+    }
+
+
+  }//.post
+
+  .page-grid{
+    width: 100%;
+  }
+
+
+}//.posts

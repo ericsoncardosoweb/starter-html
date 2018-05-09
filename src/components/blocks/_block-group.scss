@@ -1,0 +1,161 @@
+.block-group{
+  background: #FFF;
+  border-radius: 3px;
+  box-shadow: rgba(palette(brand, primary), 0.2) 0 5px 25px;
+  position: relative;
+
+  &__body{
+    padding: 1.5rem 1.8rem 7rem;
+
+    @include min-screen(992px) {
+      padding-right: 2rem;
+    }
+  }
+
+  &__title{
+    color: palette(brand, secondary);
+    font-size: em(32);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  &__subtitle{
+    color: palette(brand, secondary);
+    font-size: em(20); 
+    margin-bottom: 0;
+  }
+
+  .divider{
+    margin: 20px 0 15px;
+  }
+
+  .link-absolute{
+    @include absolute_all();
+    z-index: 10;
+    border: 2px solid  rgba(palette(brand, migrate), 0.8);
+    background: rgba(palette(brand, migrate), 0.2);
+    border-radius: 3px;
+    opacity: 0;
+    transition: all .5s;
+
+    &:focus, &:active{
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &:hover{
+    >.link-absolute{
+      opacity: 1;
+    }
+  }
+
+  &__text{
+    font-size: em(18);
+    color: palette(brand, primary-dark);
+    min-height: 50px;
+  }
+
+  &__figure{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 215px;
+
+    img{
+      max-height: 150px;
+    }
+  }
+
+  &__footer{
+    position: absolute;
+    bottom: 1.8rem;
+    left: 2.5rem;
+  }
+
+  .block-group-small &{
+    .block-group__title{
+      font-size: em(17);
+    }
+    .block-group__subtitle{
+      font-size: em(12);
+    }
+    .block-group__text{
+      font-size: em(12);
+      margin-bottom: 10px;
+    }
+
+    .block-group__content{
+      width:80%;
+      .divider{
+        max-width: 88%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .block-group__figure{
+      padding: 20px 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: 120px;
+
+      img{
+        max-height: 90px;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .block-group__body{
+      padding: 1.6rem 1.6rem 4rem;
+
+      @include min-screen(992px) {
+        padding-right: 1.6rem;
+      }
+    }
+
+    .block-group__footer{
+      left: 2rem;
+      bottom: 2.3rem;
+
+      .button.left{
+        min-width: initial;
+        font-size: 10px;
+
+        i{
+          margin-left: 5px!important;
+          font-size: 15px;
+        }
+      }
+    }
+
+    @include max-screen(700px) {
+      max-width: 150px;
+      min-height: 190px;
+
+      .block-group__content{
+        .divider, .block-group__text{
+          display: none;
+        }
+      }
+
+      .block-group__footer{
+        display: none;
+      }
+
+      .block-group__body{
+        padding: 1.3rem 0.9rem 0.8rem;
+      }
+
+      .block-group__figure{
+        min-height: initial;
+        padding: 15px 0 0;
+      }
+    }
+  }//small
+
+
+} 

@@ -1,0 +1,29 @@
+.container {
+	max-width: 1200px;
+	width: 100%; 
+	padding-left: 15px; 
+	padding-right: 15px;
+	margin: 0 auto;
+
+	@include min-screen($start-mobile) {
+		padding: {
+			right: 15px;
+			left: 15px; 
+		}
+	}
+
+
+	&.is-small{ 
+		max-width: 610px;
+	}
+
+	&.is-medium{
+		max-width: 880px;
+	}
+ 
+	&.is-large{ 
+		max-width: 1800px;
+	}
+
+	@include clearfix(); 
+}

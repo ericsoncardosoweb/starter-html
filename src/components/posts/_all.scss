@@ -1,0 +1,164 @@
+@import "list-posts";
+
+.post{
+  position: relative;
+
+
+  &__date{
+    color: palette(brand, migrate);
+    margin-bottom: 25px;
+
+    > *{
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &__feature{
+      font-size: em(50);
+      line-height: .7;
+    }
+
+    &__text{
+      text-transform: uppercase;
+      font-size: em(15);
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    &--feature {
+      color: palette(brand, primary-light);
+
+      > *{
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      &__feature{
+        font-size: em(80); 
+        line-height: .7;
+      }
+
+      &__text{
+        text-transform: uppercase;
+        font-size: em(17);
+        text-transform: uppercase;
+        line-height: 1.15;
+        margin-top: 3px;
+      }
+    }
+
+  }//date
+
+  &__title{
+    color: palette(brand, migrate);
+    font-size: em(21);
+    font-weight: 400;
+    margin-bottom: 24px;
+
+    @include linkreset();
+  }
+
+  @include max-screen(500px) {
+    &:after{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: palette(brand, secondary);
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+    }
+  }
+
+
+  &__summary{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .social-share{
+      border-top: 1px solid palette(brand, light);
+      display: flex;
+      padding: 10px 0 10px 10px;
+      justify-content: space-between;
+      margin-top: 35px;
+      margin-bottom: 40px;
+      color: palette(brand, migrate);
+      max-width: 290px;
+
+      &__label{
+        color: inherit;
+        font-size: 13px;
+        margin-right: 20px;
+      }
+
+      nav{
+        a{
+          margin: 0 8px;
+          font-size: 20px;
+          color: palette(brand, primary);
+        }
+      }
+    }
+  }
+
+  .post-author{
+    position: relative;
+    font-size: 12px;
+    color: palette(brand, migrate);
+
+    &__title{
+      margin: 0;
+      font-weight: bold;
+    }
+    
+    *{
+      color: inherit;
+      font-size: inherit;
+    }
+
+    @include linkreset();
+  }
+
+  &__title{
+    color: palette(brand, migrate);
+    font-size: em(36);
+    line-height: 1.2;
+  }
+
+  @include max-screen(991px) {
+    .post__summary{ 
+      >*{
+        display: none;
+      }
+    
+      .post__date--feature{
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 35px;
+      }
+    }
+
+    .show-mobile{
+      display: block!important;
+
+      &.post__summary{
+        >*{
+          display: block;
+        }
+        .social-share{
+          max-width: 100%;
+          display: flex;
+          margin-top: 60px;
+        }
+        .post-author{
+          text-align: right;
+        }
+      }
+    }
+  }
+
+
+}//.post

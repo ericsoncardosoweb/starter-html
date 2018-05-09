@@ -1,0 +1,184 @@
+.headline--register-reservation {
+
+}
+
+.headline-main--register-reservation {
+	font-size: em(31);
+	font-weight: 500;
+	margin-bottom: 1px;
+}
+
+.subtitle--register-reservation {
+	font-size: em(15);
+}
+
+.connect-facebook {
+  margin: {
+    top: 52px;
+    bottom: 19px;
+  }
+}
+
+.column-connect-facebook--first {
+
+  h4 {
+    font-size: em(20);
+  }
+}
+
+.column-connect-facebook--last {
+  text-align: right;
+}
+
+.register-reservation {
+  
+  
+  @media (max-width: 767px) {
+      [class^="col"] {
+        max-width: none;
+        min-width: 100%;
+      }
+      .item-doc{
+        min-width: 15%;
+      } 
+  }
+  margin: {
+    top: 16px;
+    // bottom: 211px;
+  }
+
+  form {
+
+    label {
+
+      &.input {
+        margin-bottom: 0;
+      }
+
+      .label-text {
+
+        &.text-right {
+          display: inline-block;
+          width: 100%;
+          text-align: right;
+        }
+
+        small {
+          display: block
+        }
+      }
+
+      &.small {
+
+        .label-text {
+          font-size: em(14);
+          line-height: 1.6;
+        }
+      }
+    }
+
+    input {
+      color: palette(brand, primary);
+    }
+
+
+    .row {
+      margin: {
+        right: -10px;
+        left: -10px;
+      }
+
+      &:nth-child(4) {
+        margin-bottom: 51px;
+      }
+
+      &:nth-child(6) {
+        margin-top: 32px;
+      }
+
+      &:nth-child(7) {
+        margin-top: 16px;
+      }
+
+      &:nth-child(8) {
+        margin-top: 9px;
+      }
+    }
+
+    [class^="col"] {
+      padding: {
+        right: 10px;
+        left: 10px;
+      }
+    }
+
+    .icon-alert {
+
+      &.warning-aware {
+        position: absolute;
+        color: palette(stage, danger);
+        top: -5px;
+        left: -46px;
+        font-size: 30px;
+        display: none;
+      }
+    }
+  }
+}
+
+.col-3-form {
+  -webkit-box-flex: 0;
+  flex: 0 0 24.5%;
+  max-width: 24.5%;
+}
+
+.col-3-form, .col-6-form, .col-10-form {
+
+  .form-group {
+    margin: {
+      top: 12.5px;
+      bottom: 12.5px;
+    }
+  }
+}
+
+.col-6-form {
+  -webkit-box-flex: 0;
+  flex: 0 0 36.9999%;
+  max-width: 36.9999%;
+}
+
+.col-10-form {
+  -webkit-box-flex: 0;
+  flex: 0 0 63.468%;
+  max-width: 63.468%;
+}
+
+.wrapper-airline-inputs {
+  display: none;
+  background-color: palette(brand, crystal);
+  border-radius: 4px;
+  padding: {
+    top: 20px;
+    right: 26px;
+    bottom: 20px;
+    left: 26px;
+  }
+}
+
+@media (max-width: 767px) {
+  .connect-facebook {
+    .row { display: block; }
+
+    .col:last-of-type {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+
+  .form-register-reservation{
+    span.label-text.text-right{
+      text-align:left !important;
+    }
+  }
+}

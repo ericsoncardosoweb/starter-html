@@ -1,8 +1,7 @@
 /**
  * Gulp for Front End.
  *
- * @businnes Lumus Inteligência Estratégica
- * @author  Ericson Cardoso <ericson.cardoso@bliteti.com.br>
+ * @author  Ericson Cardoso <contato@ericsoncardoso.com.br>
  * @version 2.0.0
  * @license The MIT License (MIT)
  *  Copyright (c) 2018 JustCoded.
@@ -31,145 +30,49 @@
  * -----------------------------------------------------------------------------
  */
 
-const config = require('./gulpconfig.js');//Gulp settings and variables
-
-const requireDir  = require('require-dir');
-const tasks       = requireDir('./tasks');
-
-const bs = require('browser-sync');
-const livereload    = require('gulp-livereload');
-
-const autoprefixer = require('autoprefixer');
-const babel = require('gulp-babel');
-const changed = require('gulp-changed');
-const del = require('del');
-const eslint = require('gulp-eslint');
-const gulp = require('gulp');
-const include = require('gulp-include');
-
-const minimist = require('minimist');
-const nano = require('gulp-cssnano');
-const postcss = require('gulp-postcss');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+var path = require('path');
+var del = require('del');
+var gulp = require('gulp');
+var fileinclude = require('gulp-file-include');
 const sequence = require('run-sequence');
-const uglify = require('gulp-uglify');
-const plumber = require('gulp-plumber');
-const gutil = require('gulp-util');
+var $ = require('gulp-load-plugins')({ rename: { 'gulp-if': 'if' } });
 
+// set variable via $ gulp --type production
+var environment = $.util.env.type || 'development';
+var isProduction = environment === 'production';
+var webpackConfig = require('./webpack.config.js').getConfig(environment);
 
-/**
- * Catch stream errors
- * -----------------------------------------------------------------------------
- */
+var port = $.util.env.port || 1337;
+var app = 'src/';
+var dist = 'dist/';
 
-const gulpSrc = gulp.src;
-
-gulp.src = function onError(...args) {
-  return gulpSrc
-    .apply(gulp, args)
-    // Catch errors
-    .pipe(plumber(function onError(error) {
-      gutil.log(gutil.colors.red(`Error (${error.plugin}):${error.message}`));
-      this.emit('end');
-    }));
-};
-
-/**
- * Default task
- * -----------------------------------------------------------------------------
- */
-
-gulp.task('default', (callback) => sequence(
-  ['build'],
-  ['server'],
-  ['concatFiles'],
-  callback
-));
 
 /**
  * Local dev server with live reload
  * -----------------------------------------------------------------------------
  */
 
-gulp.task('server', () => {
-  // var server = livereload();
-  // livereload.listen();
-  // Create and initialize local server
-  bs.create();
-  bs.init({
-    notify: false,
-    server: config.path.build,
-    open: 'local',
-    ui: false,
+// add livereload on the given port
+gulp.task('serve', function() {
+  $.connect.server({
+    root: dist,
+    port: port,
+    livereload: {
+      port: 35729
+    }
   });
-  // Watch for build changes and reload browser
-  bs.watch(config.path.build + '/**/**/**/*').on('change', bs.reload);
-  // Watch for source changes and execute associated tasks
-
-  gulp.watch(`./${config.path.src}/data/**/*`, ['files:data']);
-  gulp.watch(`./${config.path.src}/media/**/*`, ['files:media']);
-  gulp.watch(`./${config.path.src}/misc/**/*`, ['files:misc']);
-  gulp.watch(`./${config.path.src}/assets/fonts/**/*`, ['media:fonts']);
-  gulp.watch(`./${config.path.src}/assets/images/**/*`, ['media:images']);
-  gulp.watch(`./${config.path.src}/assets/icons/**/*`, ['media:icons']);
-  gulp.watch(`./${config.path.src}/assets/symbols/**/*`, ['media:symbols']);
-  gulp.watch(`./${config.path.src}/assets/sprites/**/*`, ['media:sprites']);
-  gulp.watch(`./${config.path.src}/scripts/**/**/*.js`, ['scripts:js']);
-  gulp.watch(`./${config.path.src}/components/**/**/*.js`, ['components:js']);
-  gulp.watch(`./${config.path.src}/components/**/**/*.scss`, ['components:css']);
-  gulp.watch(`./${config.path.src}/modules/**/**/*.js`, ['modules:js']);
-  gulp.watch(`./${config.path.src}/modules/**/**/**/*.scss`, ['modules:css']);
-  gulp.watch(`./${config.path.src}/vendors/**/**/**/*.js`, ['vendors:js']);
-  gulp.watch(`./${config.path.src}/vendors/**/**/**/*.scss`, ['vendors:css']);
-  gulp.watch(`./${config.path.src}/styles/**/**/**/*.scss`, ['styles:scss']);
-  gulp.watch(`./${config.path.src}/styles/**/**/**/*.scss`, ['styles:basic']);
-  gulp.watch(`./${config.path.src}/views/**/**/**/*.pug`, ['views:pug']);
 });
 
-/**
- * Build static assets
- * -----------------------------------------------------------------------------
- */
-
-gulp.task('build', (callback) => sequence(
-  ['clean'],
-  ['assets'],
-  ['scripts:js'],
-  ['styles:scss'],
-  ['styles:basic'],
-  ['components:js'],
-  ['components:css'],
-  ['modules:js'],
-  ['modules:css'],
-  ['vendors:js'],
-  ['vendors:css'],
-  ['views:pug'],
-  callback
-));
 
 /**
  * Remove build directory
  * -----------------------------------------------------------------------------
  */
 
-gulp.task('clean', () => del('./build'));
+gulp.task('clean', function(cb) {
+  return del([dist], cb);
+});
 
-/**
- * Assets
- * -----------------------------------------------------------------------------
- */
-
-gulp.task('assets', (callback) => sequence(
-  ['files:data'],
-  ['files:media'],
-  ['files:misc'],
-  ['media:images'],
-  ['media:symbols'],
-  ['media:icons'],
-  ['media:sprites'],
-  callback
-));
 
 /**
  * Concat files
@@ -186,34 +89,229 @@ gulp.task('concatFiles', (callback) => sequence(
 /*=============================
 =            TASKS            =
 =============================*/
-gulp.task('views:pug', tasks.views.pug);
+// by default build project and then watch files in order to trigger livereload
+gulp.task('default', (callback) => sequence(
+  'clean',
+  'public',
+  'vendorStyles',
+  'vendorScripts',
+  'scripts',
+  'styles',
+  'basic_style',
+  'html',
+  'pug',
+  'serve',
+  'watch',
+  callback
+));
 
-gulp.task('styles:scss', tasks.styles.scss);
-gulp.task('styles:basic', tasks.styles.basic);
 
-gulp.task('scripts:lint', tasks.scripts.lint);
-gulp.task('components:lint', tasks.components.lint);
-gulp.task('modules:lint', tasks.modules.lint);
+// waits until clean is finished then builds the project
+gulp.task('build', (callback) => sequence(
+  'clean',
+  'public',
+  'allScripts',
+  'allStyles',
+  'basic_style',
+  'html',
+  'pug',
+  callback
+));
 
-gulp.task('scripts:js', ['scripts:lint'], tasks.scripts.js);
+// watch styl, html and js file changes
+gulp.task('watch', function() {
+  gulp.watch(app + 'components/**/*.scss', ['styles', 'basic_style']);
+  gulp.watch(app + 'styles/**/*.scss', ['styles', 'basic_style']);
+  gulp.watch(app + 'views/**/*.html', ['html']);
+  gulp.watch(app + 'public/**/*.*', ['public']);
+  gulp.watch(app + 'views/**/*.pug', ['pug']);
+  gulp.watch(app + 'components/**/*.js', ['scripts']);
+  gulp.watch(app + 'scripts/**/*.js', ['scripts']);
+});
 
-gulp.task('components:js', ['components:lint'], tasks.components.js);
-gulp.task('components:css', tasks.components.css);
+/*=============================
+=            Tasks Settings            =
+=============================*/
+// https://github.com/ai/autoprefixer
+var autoprefixerBrowsers = [                 
+  'ie >= 9',
+  'ie_mob >= 10', 
+  'ff >= 30',
+  'chrome >= 34',
+  'safari >= 6',
+  'opera >= 23',
+  'ios >= 6',
+  'android >= 4.4',
+  'bb >= 10'
+];
 
-gulp.task('modules:js', ['modules:lint'], tasks.modules.js);
-gulp.task('modules:css', tasks.modules.css);
+const minimist = require('minimist');
+const options = minimist(process.argv.slice(2), {
+  string: ['env'],
+  default: {
+    env: 'dev',
+  },
+});
 
-gulp.task('vendors:js', tasks.vendors.js);
-gulp.task('vendors:css', tasks.vendors.css);
+gulp.task('scripts', function() {
+  return gulp.src(webpackConfig.entry)
+    .pipe($.sourcemaps.init())
+    .pipe($.webpack(webpackConfig))
+    .pipe(isProduction ? $.uglify() : $.util.noop())
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest(dist + 'js/'))
+    .pipe($.size({ title : 'js' }))
+    .pipe($.connect.reload());
+});
 
-gulp.task('concat:scripts', tasks.concat.scripts);
-gulp.task('concat:styles', tasks.concat.styles);
+// copy html from app to dist
+gulp.task('public', function () {
+  return gulp.src(app + 'public/**/*.*')
+    .pipe(gulp.dest(dist + 'public/'))
+    .pipe($.connect.reload());
+});
 
-gulp.task('files:data', tasks.files.data);
-gulp.task('files:media', tasks.files.media);
-gulp.task('files:misc', tasks.files.misc);
+// copy html from app to dist
+gulp.task('html', function() {
+  return gulp.src(app + 'views/**/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest(dist))
+    .pipe($.size({ title : 'html' }))
+    .pipe($.connect.reload());
+});
 
-gulp.task('media:images', tasks.media.images);
-gulp.task('media:icons', tasks.media.icons);
-gulp.task('media:symbols', tasks.media.symbols);
-gulp.task('media:sprites', tasks.media.sprites);
+// Compile Pug files
+gulp.task('pug', function() {
+  return gulp.src(app + 'views/site/**/*.pug')
+    .pipe($.changed(dist, {
+      extension: '.html',
+    }))
+    .pipe($.pug({
+      basedir: app + 'views/',
+      pretty: (options.env === 'dev'),
+      data: {
+        env: options.env,
+      },
+    })) 
+    .pipe(gulp.dest(dist))
+    .pipe($.size({ title : 'PUG' }))
+    .pipe($.connect.reload());
+});
+
+
+const cssMqpacker = require('css-mqpacker');
+const cssnano = require('cssnano');
+gulp.task('styles', function (cb) {
+  // convert stylus to css
+  return gulp.src(app + 'styles/*.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      outputStyle: isProduction ? 'compress' : 'expanded'
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({ browsers: autoprefixerBrowsers }))
+    .pipe($.sourcemaps.write('.'))
+    .pipe($.if(isProduction,
+      $.postcss([
+        cssMqpacker(), // Combine matching media queries.
+        cssnano({
+          reduceIdents: false,
+          zindex: false
+        })
+      ])
+      .pipe($.rename({ suffix: '.min' }))
+    ))
+    .pipe(gulp.dest(dist + 'css/'))
+    .pipe($.size({ title: 'css' }))
+    .pipe($.connect.reload());
+});
+
+gulp.task('basic_style', function (cb) {
+  // convert stylus to css
+  return gulp.src(app + 'styles/basic.scss')
+    .pipe($.sass({
+      outputStyle: 'compress'
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({ browsers: autoprefixerBrowsers }))
+    .pipe($.postcss([
+      cssMqpacker(), // Combine matching media queries.
+      cssnano({
+        reduceIdents: false,
+        zindex: false
+      })
+    ]))
+    .pipe($.rename({ suffix: '.min' }))
+    .pipe(gulp.dest(dist + 'css/'))
+    .pipe($.size({ title: 'css basic' }))
+    .pipe($.connect.reload());
+});
+
+// Vendors Style
+gulp.task('vendorStyles', function (cb) {
+  // convert stylus to css
+  return gulp.src([app + 'vendors/static/**/*.scss', app + 'vendors/static/**/*.css'])
+    .pipe($.sass({
+      outputStyle: 'compress'
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({ browsers: autoprefixerBrowsers }))
+    .pipe(
+      $.postcss([
+        cssMqpacker(), // Combine matching media queries.
+        cssnano({
+          reduceIdents: false,
+          zindex: false
+        })
+      ])
+    )
+    .pipe($.concat('vendors.min.css'))
+    .pipe(gulp.dest(dist + 'css/'))
+    .pipe($.size({ title: 'vendor styles' }))
+    .pipe($.connect.reload());
+});
+
+// Concatenação de scripts
+gulp.task('vendorScripts', function (cb) {
+  // convert stylus to css
+  return gulp.src(app + 'vendors/static/**/*.js')
+    .pipe($.concat('vendors.min.js'))
+    .pipe($.uglify())
+    .pipe(gulp.dest(dist + 'js/'))
+    .pipe($.size({ title: 'vendor scripts' }))
+    .pipe($.connect.reload());
+});
+
+// Concatenação de estilos
+gulp.task('allStyles', function (cb) {
+  // convert stylus to css
+  return gulp.src([app + 'styles/main.scss', app + 'vendors/static/**/*.css', app + 'vendors/static/**/*.scss'])
+    .pipe($.sass({
+      outputStyle: 'compress'
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({ browsers: autoprefixerBrowsers }))
+    .pipe(
+      $.postcss([
+        cssMqpacker(), // Combine matching media queries.
+        cssnano({
+          reduceIdents: false,
+          zindex: false
+        })
+      ])
+    )
+    .pipe($.concat('all.min.css'))
+    .pipe(gulp.dest(dist + 'css/'))
+    .pipe($.size({ title: 'allStyles' }))
+    .pipe($.connect.reload());
+});
+
+// Concatenação de scripts
+gulp.task('allScripts', function (cb) {
+  // convert stylus to css
+  return gulp.src([dist + 'js/vendor.js', dist + 'js/main.js'])
+    .pipe($.uglify())
+    .pipe($.concat('all.min.js'))
+    .pipe(gulp.dest(dist + 'js/'))
+    .pipe($.size({ title: 'allScripts' }))
+    .pipe($.connect.reload());
+});

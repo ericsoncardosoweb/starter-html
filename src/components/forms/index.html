@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Formulários - Componentes</title>
+  <link rel="stylesheet" href="http://localhost:55572/assets/dist/css/basic.css">
+</head>
+<body>
+  <!-- ======================== BEGIN: FORMS COMPONENTS ======================== -->
+  <section class="section">
+    <div class="container m-b-90">
+      <div class="section">
+        <h3>Campos Básicos</h3>
+
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Text - URL - search - tel <small>Texto de detalhe</small></label>
+              <input type="text">
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Select</label>
+              <select>
+                <option>List Item</option>
+                <option>List Item</option>
+                <option>List Item</option>
+                <option>List Item</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Checkbox</label>
+              <label>
+                <input type="checkbox" class="checkbox">
+                <span>Exemplo de campo Checkbox</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Radio</label>
+              <label>
+                <input type="radio" class="radio">
+                <span>Exemplo de campo Radio</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Sombreamento</h3>
+
+        <div class="form-shadow">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="form-group">
+                <label>Text - URL - search - tel</label>
+                <input type="text" value="Exemplo de conteúdo">
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="form-group">
+                <label>Campo com ícone</label>
+                <div class="input icon">
+                  <input type="text">
+                  <i class="icon-calendar"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="form-group">
+                <label>Checkbox</label>
+                <label class="input">
+                  <input type="checkbox" class="checkbox">
+                  <span class="uppercase">Exemplo de campo Checkbox</span>
+                </label>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="form-group">
+                <label>Radio</label>
+                <label class="input">
+                  <input type="radio" class="radio">
+                  <span class="uppercase">Exemplo de campo Radio</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Campos com ícones</h3>
+
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <div class="input icon">
+                <input type="text">
+                <i class="icon-calendar"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <div class="input icon right">
+                <input type="text">
+                <i class="icon-card"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <div class="input icon loading">
+                <input type="text">
+                <i class="icon-loading"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <div class="input icon double">
+                <i class="icon-info"></i>
+                <input type="text">
+                <i class="icon-curet-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Placeholders e labels</h3>
+
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="sr-only"></label>
+              <div class="input">
+                <input type="text" placeholder="Modo Simples">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="sr-only"></label>
+              <div class="input">
+                <label class="placeholder">Modo Dinâmico</label>
+                <input type="text">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <div class="input">
+                <label>Exemplo de label</label>
+                <input type="text">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label class="sr-only"></label>
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <label>Label inline</label>
+                </div>
+                <div class="col">
+                  <input type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Fields Groups</h3>
+
+        <div class="row">
+          <div class="col-sm-6 col-12">
+            <div class="group-divider">
+              <div class="form-group">
+                <label>Label</label>
+                <div class="input">
+                  <input type="text">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Label</label>
+                <div class="input">
+                  <input type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Validação</h3>
+
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group has-error">
+              <label>Text - URL - search - tel <small>Texto de detalhe</small></label>
+              <input type="text">
+              <div class="help-text">Campo Obrigatório</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group has-success">
+              <label>Select</label>
+              <select>
+                <option>List Item</option>
+                <option>List Item</option>
+                <option>List Item</option>
+                <option>List Item</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group has-error">
+              <label>Checkbox</label>
+              <label>
+                <input type="checkbox" class="checkbox">
+                <span>Exemplo de campo Checkbox</span>
+              </label>
+              <div class="help-text">Campo Obrigatório</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group has-error">
+              <label>Radio</label>
+              <label>
+                <input type="radio" class="radio">
+                <span>Exemplo de campo Radio</span>
+              </label>
+              <div class="help-text">Campo Obrigatório</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Campos Específicos</h3>
+
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <div class="quantity">
+                <button class="minus ripple"></button>
+                <input type="number" />
+                <button class="plus ripple"></button>
+              </div><!-- /.quantity -->
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group has-error">
+              <div class="quantity">
+                <button class="minus ripple"></button>
+                <input type="number" />
+                <button class="plus ripple"></button>
+              </div><!-- /.quantity -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="margin-bottom: 600px">
+        <h3>Dropdowns</h3>
+
+        <div class="row">
+          <div class="col-lg-4 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Seleção</label>
+              <div class="dropdown-ui">
+                <div class="input select">
+                  <input type="text" placeholder="Digite Cidade, Aeroporto ou Loja">
+                </div>
+ 
+                <div class="dropdown-ui__menu">
+                  <div class="dropdown-ui__body">
+                    <ul class="dropdown-ui__list">
+                      <li data-value="SP" selected><span class="text">São Paulo</span></li>
+                      <li data-value="RJ"><span class="text">Rio de Janeiro</span></li>
+                      <li data-value="MG"><span class="text">Minas Gerais</span></li>
+                      <li data-value="SC"><span class="text">Santa Catarina</span></li>
+                      <li data-value="PR"><span class="text">Paraná</span></li>
+                      <li data-value="MT"><span class="text">Mato Grosso</span></li>
+                      <li data-value="MS"><span class="text">Mato Grosso do Sul</span></li>
+                      <li data-value="RS"><span class="text">Rio Grande do Sul</span></li>
+                      <li data-value="RR"><span class="text">Roraima</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Autocomplete - estrutura</label>
+              <div class="dropdown-ui" data-type="autocomplete">
+                <div class="input icon">
+                  <i class="icon-pin"></i>
+                  <input type="text" placeholder="Digite Cidade, Aeroporto ou Loja">
+                </div>
+                <div class="dropdown-ui__menu">
+                  <div class="dropdown-ui__body">
+                    <ul>
+                      <li data-value="loja-1">
+                        <div class="row">
+                          <div class="col-auto">
+                            <div class="icon">
+                              <i class="icon-airplane"></i>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="text">
+                              Aeroporto de Cumbica, Guarulhos, SP
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li data-value="loja-2">
+                        <div class="row">
+                          <div class="col-auto">
+                            <div class="icon">
+                              <i class="icon-store"></i>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="text">
+                              Anhaia Melo, São Paulo, SP
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li data-value="loja-3">
+                        <div class="row">
+                          <div class="col-auto">
+                            <div class="icon">
+                              <i class="icon-bus"></i>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="text">
+                              Terminal Rodoviário Barra Funda, quiosque, São Paulo, SP
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li data-value="loja-2">
+                        <div class="row">
+                          <div class="col-auto">
+                            <div class="icon">
+                              <i class="icon-store"></i>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="text">
+                              Anhaia Melo, São Paulo, SP
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li data-value="loja-3">
+                        <div class="row">
+                          <div class="col-auto">
+                            <div class="icon">
+                              <i class="icon-bus"></i>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="text">
+                              Terminal Rodoviário Barra Funda, quiosque, São Paulo, SP
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Autocomplete - Dinâmico</label>
+              <div id="teste" class="dropdown-ui" data-url="http://localhost:55572/assets/components/forms/city.json" data-scroll="500px" data-placeholder="Exemplod e placeholder" data-type="autocomplete">
+                <div class="input icon">
+                  <i class="icon-pin"></i>
+                  <input type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Datepicker</label>
+              <div class="dropdown-ui" data-type="datepicker">
+                <div class="input icon">
+                  <i class="icon-pin"></i>
+                  <input type="text" placeholder="dd/mm/aaaa">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <div class="form-group">
+              <label>Timepicker</label>
+              <div class="dropdown-ui" data-type="timepicker">
+                <div class="input icon">
+                  <i class="icon-pin"></i>
+                  <input type="text" placeholder="hh:mm">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========================= END: FORMS COMPONENTS ========================= -->
+
+
+
+
+  <!-- ======================= STYLES ======================= -->
+  <link rel="stylesheet" href="http://localhost:55572/assets/dist/css/vendors.css">
+  <link rel="stylesheet" href="http://localhost:55572/assets/dist/css/components.css">
+  <link rel="stylesheet" href="http://localhost:55572/assets/dist/css/modules.css">
+  <link rel="stylesheet" href="http://localhost:55572/assets/dist/css/style.css">
+
+  <!-- ======================= FONTS ======================= -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700,900" rel="stylesheet">
+
+  <!-- ======================= SCRIPTS ======================= -->
+  <script src="http://localhost:55572/assets/dist/public/jquery.min.js"></script>
+  <script src="http://localhost:55572/assets/dist/js/vendors.js"></script>
+  <script src="http://localhost:55572/assets/dist/js/components.js"></script>
+  <script src="http://localhost:55572/assets/dist/js/modules.js"></script>
+  <script src="http://localhost:55572/assets/dist/js/main.js"></script>
+
+</body>
+</html>

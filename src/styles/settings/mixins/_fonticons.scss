@@ -1,0 +1,23 @@
+@mixin fonticon($content: '\f005') {
+    content: $content;
+    font: normal normal normal 2em/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+}
+ 
+@mixin flaticon($content) {
+    content: $content;
+    font: normal normal normal 2em/1 Flaticon;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+}
+
+@mixin icomoon($content) {
+    content: $content;
+    font: normal normal normal 2em/1 icomoon;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;    
+}

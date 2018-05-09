@@ -1,4 +1,4 @@
-@import "typography", "colors", "spaces", "shadows";
+@import "colors", "spaces", "shadows", "dividers", "images", "codes";
 
 .bg-cover{
   @include absolute_all();
@@ -13,15 +13,6 @@
   }
 
 
-}
-
-.bg-clean {
-    background-color: palette(brand, clean);
-}
-
-.bg-primary {
-    background-color: palette(brand, primary);
-    color: #FFF;
 }
 
 .link-phone{

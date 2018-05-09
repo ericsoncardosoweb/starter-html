@@ -1,17 +1,21 @@
-/**
+/**  
  *
  * Folha de Estilo Básica
  * Os estilos serão carregados diretamente no html do site, isso otimizará a performance, porém é importante ser somente o essencial para não ficar muito extenso
  *
+ * Arquivos importados de /compoents são do tipo prioritário para a composição principal da estrutura do layout
+ *
  */
-
+  
 @import "settings/all";
 
-/*----------  Estilos do Tema  ----------*/
-@import "base/resets/all",
-				"base/icons/all",
-				"base/grid/all",
-				"base/images/all",
-				"base/typography/all",
-				"base/responsive/all"
+/* -----------------------------------*/
+/* ---------->>> GLOBAL <<<-----------*/
+/* -----------------------------------*/
+@import "base/resets/all", // Normalize, reset browser style, etc
+				"base/layout/all", // Grid, containers, etc
+				"base/typography/all", // Formatação de textos, títulos e etc
+        "./../components/header/all",
+        "./../components/footer/all",
+        "./../components/nav/all" 
 			;

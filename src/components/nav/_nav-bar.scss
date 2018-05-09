@@ -1,0 +1,134 @@
+.nav-bar{
+  line-height: 1;
+  height: auto;
+  box-shadow: none;
+  border-top: 2px solid rgba(palette(brand, secondary), 0.3);
+  border-bottom: 2px solid rgba(palette(brand, secondary), 0.3);
+  padding: 0 0;
+  background: palette(brand, clean);
+  color: #000;
+  fill: #000;
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 0px 0;
+    margin: 0 -15px;
+
+    li{
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: auto;
+      color: palette(brand, secondary);
+      fill: palette(brand, secondary);
+      text-align: center;
+      line-height: 1;
+      font-size: 20px;
+      font-weight: 400;
+      height: 100%;
+      position: relative;
+      padding: 0 15px;
+      position: relative;
+
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 10px;
+        background: palette(brand, primary);
+        transform: translateX(15px);
+        transition: all 0.6s;
+      }
+
+      &:hover, &.active{
+        &:after{
+          width: 100%;
+        }
+      }
+
+      &:not(.active){
+        &:after{
+          opacity: 0.2;
+          height: 4px;
+        }
+      }
+
+      button, a{
+        display: block;
+        width: 100%;
+        background: transparent;
+        border: 0;
+        padding: 60px 0px 30px;
+        text-transform: inherit;
+        font-weight: weight;
+        text-align: center;
+      }
+
+      a, button{
+        >i, >svg, >img{
+          width: 22px;
+          height: 22px;
+          line-height: 22px;
+          margin: 0 auto 8px!important;
+        }
+      }
+
+      i, i.material-icons{
+        line-height: 1;
+        height: auto;
+      }
+
+      i, svg{
+        display: inline-block;
+      }
+
+
+      @include linkreset();
+    }//li
+
+    @include max-screen(1200px) {
+      li{
+        font-size: 16px;
+
+        button,a{
+          padding-top: 30px;
+        }
+      }
+    }
+
+  }//ul
+  @include max-screen(980px) {
+    position: relative;
+
+    &:after{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 120px;
+      height: 100%;
+      top: 0;
+      right: -5px;
+      background-image: linear-gradient(to left, #FFF, transparent);
+      z-index: 10;
+    }
+
+    ul{
+      white-space: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      position: relative;
+
+      li{
+        font-size: 18px;
+      }
+
+    }
+  }
+}

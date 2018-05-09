@@ -1,0 +1,39 @@
+.radio + span {
+  margin-bottom: 10px;
+
+  &:before {
+    border-radius: 50%;
+  }
+  &:after {
+    top: 10px;
+    left: 8.9px;
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+    background: palette(brand, primary-light);
+  }
+}
+
+.radio:checked + span {
+  &:before {
+    border: 1px solid $border-color;
+  }
+}
+.radio:checked[disabled] + span {
+  &:before {
+    border: 1px solid $disabled-checked-color;
+  }
+  &:after {
+    background: $disabled-checked-color;
+  }
+}
+
+
+.body--cancel-reservation__inner{
+  .radio + span {
+    &:after {
+      top: 7px;
+      left: 5.9px;
+    }
+  }
+}

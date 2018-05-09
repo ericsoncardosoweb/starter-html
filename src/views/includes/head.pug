@@ -6,8 +6,8 @@ meta(name="description", content=description)
 //- CSS
 case env
   when "dev"
-    link(href="/assets/css/basic.css", rel="stylesheet")
+    link(href="/css/basic.css", rel="stylesheet")
   when "stage"
   when "prod"
     style
-      include ./../../media/basic.min.css
+      include ./../../../dist/css/basic.min.css

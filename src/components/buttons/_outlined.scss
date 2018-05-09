@@ -1,61 +1,106 @@
-.button{
-	&.outlined{
-    background: transparent;
-    border: solid 2px palette(brand, primary);
-    color: palette(brand, primary);
-    fill: palette(brand, primary);
-    border-radius: 5px;
+.button-outlined {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: none;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0.78571429em 1em 0.78571429em;
 
-    i, svg, span[class*=icon]{
-    	color: inherit;
-    	fill: inherit;
-    }
+  font-family: $btn-ff;
+  line-height: 1em;
+  font-style: normal;
+  font-size: $btn-fz;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+
+  background: transparent;
+  border: solid 1px palette(brand, secondary);
+  color: palette(brand, secondary);
+  fill: palette(brand, secondary);
+  border-radius: $btn-bd-radius;
+
+  box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  will-change: '';
+  -webkit-tap-highlight-color: transparent;
+  speak: none;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  transition: all 0.5s ease;
+
+  i, svg, span[class*=icon]{
+  	color: inherit;
+  	fill: inherit;
+  }
 
 
 
-		/*----------  Colors  ----------*/
-		@each $color-name, $color-code in $btncolors {
-		  &.#{$color-name} {
-		    color: $color-code;
-		    border: solid 2px $color-code;
-		    background-color: transparent!important;
+	/*----------  Colors  ----------*/
+	@each $color-name, $color-code in $btncolors {
+	  &--#{$color-name} {
+	    color: $color-code;
+	    border: solid 2px $color-code;
+	    background-color: transparent!important;
 
-		    &:hover{
-		      box-shadow: rgba(#000, 0.3) inset 0 0 400px;
-		    }
-		  }
-		}
-
-		&.large{
-			padding: 0.98em 1.4em;
-		}
-
-
-		&:hover{
-			background: transparent;
-		}
-
-		&.icon-action:not(.custom){
-		  text-align: left;
-		  background: transparent;
-
-		  .icon-action__item{
-		    border-left:  1px solid palette(brand, primary);
-		    width: 50px;
-		    font-size: 0.86em;
-		  }
-
-      &.white{
-        border-width: 1px;
-        .icon-action__item{
-          border-left:  1px solid #FFF;
-        }
-      }
-
-		  &:hover{
-		  	background: transparent;
-		  }
-		}
+	    &:hover{
+	      box-shadow: rgba(#000, 0.3) inset 0 0 400px;
+	    }
+	  }
 	}
+
+
+  &--left {
+    width: 100%;
+    height: 51px;
+    padding: 0 1.55em;
+    font-size: 14px;
+    color: palette(brand, secondary);
+    border: 1px solid $border-color-blue-light;
+    text-align: left;
+
+    &:hover {border: 1px solid $border-color-blue-light;}
+  }
+
+  &--arrow {
+    width: 100%;
+    height: 51px;
+    padding: 0 1.5em;
+    font-size: 13px;
+    color: palette(brand, secondary);
+    text-transform: uppercase;
+
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='1109 -18332 18 14'><defs><style>.a{fill:none;stroke:#016ea7;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><g transform='translate(1106 -18337)'><line class='a' x2='16' transform='translate(4 12)'/><path class='a' d='M14,6l6,6-6,6'/></g></svg>");
+    background-size: 18px;
+    background-position: calc(100% - 21px) center;
+    background-repeat: no-repeat;
+    border: 1px solid palette(brand, secondary);
+    text-align: left;
+
+    &:hover {
+      background-position: calc(100% - 15px) center;
+      border: 1px solid palette(brand, secondary);
+    }
+  }
+
+  &--block {
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid palette(brand, secondary);
+
+    &:hover {border: 1px solid palette(brand, secondary);}
+  }
+
+  &--square {
+    border-radius: 0;
+  }
 
 }

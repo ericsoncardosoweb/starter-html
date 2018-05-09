@@ -1,0 +1,33 @@
+/*=====================================
+=            BLOCK ADDRESS            =
+=====================================*/
+.block-address{
+  color: palette(brand, primary);
+
+  .title{
+    font-weight: 200;
+    font-size: em(34);
+    margin-bottom: 5px;
+
+    button{
+      color: #00A7FF;
+      transform: translateY(-5px);
+      margin-left: 0;
+      padding-left: 5px;
+    }
+  }
+
+  .content{
+    font-size: 16px;
+    line-height: 1.5;
+
+    i{
+      font-size: 18px;
+      color: palette(brand, primary);
+    }
+  }
+
+  @include linkreset();
+
+}
+/*=====  End of BLOCK ADDRESS  ======*/

@@ -1,0 +1,116 @@
+/*----------  Formatting  ----------*/
+p{    
+  margin-bottom: 15px;
+  line-height: 1.33;
+  font-size: em(15);
+}
+
+ul{
+  list-style: none; 
+  margin: 0;  
+  padding: 0;  
+}
+
+/* Formatação especial para artigos e áreas de texto extenso */
+article{
+
+  p{    
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: em(17);
+  }
+
+  /*----------  Headers  ----------*/
+  h2{
+    font-weight: 300;
+    font-size: em(34);
+    line-height: 1.3;
+    margin: 0 0 38px;
+  }
+
+  h3{
+    font-weight: 300;
+    font-size: em(26);
+    line-height: 1.3;
+    margin: 15px 0 20px;
+    color: palette(brand, primary);
+  }
+
+  h4{
+    font-weight: 300;
+    font-size: em(22);
+    line-height: 1.3;
+    margin: 15px 0 20px;
+    color: palette(brand, migrate);
+  }
+
+  h5{
+    font-weight: 300;
+    font-size: em(18);
+    line-height: 1.3;
+    margin: 10px 0 15px;
+    color: palette(brand, migrate);
+  }
+
+  ul, ol{
+    margin: 0 0 20px;
+    padding: 0;
+    color: palette(brand, secondary);
+  }
+
+  ul{
+    list-style: none;
+
+    li{
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 30px;
+      font-size: em(17);
+
+      &:before{
+        @include triangle(palette(brand, light), right, 6px);
+        position: absolute;
+        left: 0;
+        top: 5px;
+      }
+
+      a{
+        text-decoration: none;
+        color: palette(brand, primary-light);
+      }
+    }
+  }
+
+  blockquote{
+    font-size: em(38);
+    padding: 10px 20px;
+    border-left: 4px solid palette(brand, ice);
+    color: palette(brand, primary);
+    margin: 15px 0 25px;
+  }
+
+  table{
+    width: 100%;
+
+    td, th{
+      border-bottom: 1px solid palette(brand, migrate);
+      color: palette(brand, migrate);
+      padding: 10px 10px;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: left;
+
+      &:last-child{
+        text-align: right;
+        padding-right: 0;
+      }
+
+      &:first-child{
+        padding-left: 0;
+      }
+    }
+  }
+
+}//article
+
+

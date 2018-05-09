@@ -1,3 +1,3 @@
-//= include components/sample.js
-
-$('h1').collapse();
+setTimeout(() => {
+  console.log('ES6 loaded')
+}, 600);

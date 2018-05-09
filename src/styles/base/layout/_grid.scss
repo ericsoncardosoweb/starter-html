@@ -1,0 +1,133 @@
+/*  ==========================================================================
+  Grid - Layout
+  ========================================================================== */
+  body, *{
+    box-sizing: border-box;
+    &::after,
+    &::before {
+      box-sizing: border-box;
+    }
+  }
+
+  body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wrapper{
+    position: relative;
+    z-index: 2;
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+  }
+
+  main{
+    position: relative;
+    z-index: 1;
+
+    &.has-border{
+      border-bottom: 1px solid rgba(palette(brand, primary), 0.4);
+    } 
+  }
+
+  #main-content{
+    min-height: 300px;
+  }
+
+  section, .container{
+    position: relative;
+    z-index: 2;
+  }
+
+  .row{
+    &.is-small{
+      @include gridbs(7px);
+    }
+
+    &.is-medium{
+      @include gridbs(18px);
+    }
+
+    &.is-large{
+      @include gridbs(24px);
+    }
+
+    &.not-gutter{
+      @include gridbs(0px);
+    }
+
+    &[class*='middle-']{
+      align-items: center;
+    }
+
+    .col-auto{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &.blocks{
+      margin: 0 0;
+      @include gridbs(5px);
+
+      > *{
+        margin: 5px 0;
+      }
+
+      a, img{
+        display: block;
+      }
+
+      img{
+        width: 100%;
+      }
+    }
+
+    @include m('split') {
+      .bg-cover{
+        min-width: 100vw;
+      }
+
+      @include e('left') {
+        position: relative;
+        .bg-cover{
+          right: 0;
+          left: auto;
+        }
+      }
+
+      @include e('right') {
+        position: relative;
+      }
+    }
+
+    @include max-screen(991px) { 
+      &.invert-mobile{
+        > *{
+          order: 1;
+
+          &:first-child{
+            order: 2;
+          }
+        }
+      }
+    }
+
+    @include max-screen(767px) {
+      &.invert-mobile-sm{
+        > *{
+          order: 1;
+
+          &:first-child{
+            order: 2;
+          }
+        }
+      }
+    }
+    }//.row
+
+    @media (max-width: 1020px) {
+      body.no-scroll {
+        overflow: hidden !important;
+        height: 100vh;
+      }
+    }

@@ -1,0 +1,184 @@
+/*=============================
+=            BLOCK            =
+=============================*/
+
+.block{
+	position: relative;
+
+
+
+	/*----------  Mutations  ----------*/
+	@include m('default') {
+		.thumbnail{
+			margin-bottom: 20px;
+			min-height: 150px;
+			display: flex;
+			align-items: center;
+		}
+
+
+		.content{
+			font-size: 24px;
+			font-weight: 200;
+			color: palette(brand, secondary);
+			line-height: 1.4;
+
+			*:last-child{
+				margin-bottom: 0;
+			}
+		}
+
+	}
+
+	@include m('icon') {
+		margin: 25px 0;
+
+		.thumbnail{
+			font-size: 64px;
+			min-height: 120px;
+			display: flex;
+			align-items: center;
+			margin-bottom: 0;
+		}
+
+		.content{
+			padding: 16px 0 0;
+		}
+
+		.title{
+			font-size: em(30);
+			font-weight: 400;
+			margin: 0 0 25px;
+		}
+
+		/*----------  Mutations  ----------*/
+		&.small{
+			.title {
+				font-size: em(24);
+				font-weight: 600;
+				margin-bottom: 10px;
+			}
+
+			.content{
+				font-size: 13px;
+			}
+
+
+		}
+
+
+	}
+
+
+
+}
+
+.block-icon{
+	&.horizontal{
+		margin-bottom: 70px; 
+
+		.block-figure{
+			min-width: 170px;
+			text-align: left;
+			margin-bottom: 30px;
+
+			@include min-screen(992px) {
+				text-align: center;
+			}
+		}
+
+		.row{
+			@include gridbs(5px);
+		}
+	}
+}
+
+.block-list{
+	list-style: none;
+	padding: 0;
+	margin: 0 0 80px;
+
+	li{
+		padding: 38px 0;
+		border-bottom: 2px solid rgba(palette(brand, secondary), 0.2);
+	}
+}
+
+.blocks{
+	.col-12{
+		padding-top: 30px;
+		padding-bottom: 30px;
+
+		@include min-screen(992px) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+
+	}
+}
+
+
+@import "block-address", "block-partners", "block-links-social", "block-group";
+
+
+.block-contact-feature{
+	color: palette(brand, secondary);
+
+	i{
+		font-size: 40px;
+	}
+
+	.link-phone{
+		font-size: 44px;
+		color: palette(brand, primary-light)!important;
+
+		@include max-screen(480px) {
+			font-size: 38px;
+		}
+	}
+
+	.link-phone{
+		margin-top: 10px;
+	}
+
+	&.center{
+		text-align: center;
+
+		p{
+			font-size: 22px;
+		}
+
+		.link-phone{
+			color: palette(brand, secondary)!important;
+		}
+	}
+}
+
+.row-or{
+	position: relative;
+	color: palette(brand, secondary);
+	margin: 40px 0;
+
+	span{
+		display: table;
+		padding: 10px;
+		text-transform: uppercase;
+		margin: 0 auto;
+		background:	#FFF;
+		font-size: 17px;
+		font-weight: 600;
+		position: relative;
+		z-index: 2;
+	}
+
+	&:before{
+		content: "";
+		width: 100%;
+		border-top: solid 1px palette(brand, secondary);
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+}
+/*=====  End of BLOCK  ======*/

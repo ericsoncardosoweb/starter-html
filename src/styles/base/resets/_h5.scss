@@ -82,14 +82,26 @@ table {
 
 /* change border colour to suit your needs */
 hr {
-    display:block;
+    display:block; 
     height:1px;
     border:0;   
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
 }
-
+ 
 input, select {
     vertical-align:middle;
+}
+
+input::-ms-clear {
+    display: none;
+}
+input::-ms-reveal {
+    width : 0;
+    height: 0;
+    display: none; 
+}
+select::-ms-expand {
+    display: none;
 }

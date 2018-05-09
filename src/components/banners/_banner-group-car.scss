@@ -1,0 +1,263 @@
+.banner-group-car{
+  position: relative;
+  
+  .banner__nav{
+    position: absolute;
+    z-index: 100;
+    top: 270px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: transparent;
+    border-radius: 40px;
+    max-width: 45px;
+    overflow: hidden;
+    transition: all 0.5s;
+
+    &:hover{
+      max-width: 200px;
+      background: #fff;
+    }
+
+    i{
+      width: 44px;
+      min-width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: palette(brand, secondary);
+      color: #FFF;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s;
+    }
+
+    span {
+      text-transform: uppercase;
+      color: palette(brand, primary);
+      font-size: 16px;
+      margin: 0 20px;
+      white-space: nowrap
+    }
+
+    &:hover {
+      i{
+        background: palette(brand, contrast);
+        color: palette(brand, secondary);
+      }
+    }
+
+    &.prev{
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+      direction: rtl;
+    }
+
+    @include custom-device(1300px, 1659px) {
+      &.prev{
+        left: -100px;
+      }
+
+      &.next{
+        right: -100px;
+      }
+    }
+
+    @include min-screen(1660px) {
+      &.prev{
+        left: -240px;
+      }
+
+      &.next{
+        right: -240px;
+      }
+    }
+
+    @include max-screen(991px) {
+      top: 150px;
+    }
+
+  }
+
+  .banner__item{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .banner__header{
+    order: 1;
+    flex: 0 0 100%;
+    max-width: 100%;
+    
+    @include min-screen(992px) {
+      padding-left: 23px;
+      flex: 0 0 68.5%;
+      max-width: 68.5%;
+      position: relative;
+      z-index: 1;
+      margin-left: 31.5%;
+  
+      &:before{
+        content: "";
+        display: block;
+        height: 200%;
+        border-left: 1px solid palette(brand, light);
+        position: absolute;
+        top: -60px;
+        left: -12px;
+      }
+    }
+
+    .banner__pre-title{
+      font-size: em(19);
+      color: palette(brand, primary-dark);
+      margin-bottom: 0px;
+
+    }
+    
+    .banner__title{
+      font-size: em(65);
+      line-height: 1;
+      color: palette(brand, migrate);
+      margin-bottom: 5px;
+  
+      @include max-screen(991px) {
+        font-size: em(34);
+      }
+    }
+
+    .banner__summary{
+      font-size: em(18);
+      color: palette(brand, primary-dark);
+
+      span{
+        text-transform: uppercase;
+        color: palette(brand, secondary);
+        display: block;
+      }
+    }
+
+
+
+  }
+
+  .banner__figure{
+    order: 2;
+    position: relative;
+    z-index: 2;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    img{
+      width: 100%;
+    }
+
+    @include max-screen(991px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .banner__legend{
+      font-size: 15px;
+      text-align: center;
+      padding: 5px 0;
+      
+      @include min-screen(992px) {
+        padding: 5px 40px;
+        text-align: left;
+      }
+    }
+  }
+
+  .banner__features-list{
+    order: 2;
+    flex: 0 0 auto;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 46px;
+
+    @include max-screen(991px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+      order: 4;
+      padding: 46px 0 0;
+    }
+
+    
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      
+      @include min-screen(992px) {
+        min-width: 300px;
+      }
+    }
+
+    li{
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: palette(brand, primary-dark);
+
+      .icon{
+        width: 45px;
+        text-align: center;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .banner__description{
+    order: 5;
+    padding: 60px 0; 
+    
+    @include min-screen(992px) {
+      order: 2;
+      padding-left: 23px;
+      max-width: 56%;
+      position: relative;
+      z-index: 1;
+      margin-left: 31.5%;
+    }
+
+    @include max-screen(991px) {
+      padding: 46px 0 60px;
+    }
+  }
+
+  .banner__button{
+    order: 3;
+    padding-top: 30px;
+
+    @include max-screen(991px) {
+      width: 100%;
+      flex: 0 0 100%;
+
+      .button{
+        width: 100%;
+      }
+    }
+    
+    @include min-screen(992px) {
+      order: 2;
+      padding-left: 23px;
+      max-width: 56%;
+      position: relative;
+      z-index: 1;
+      margin-left: 31.5%;
+      padding-top: 0;
+    }
+  }
+
+}

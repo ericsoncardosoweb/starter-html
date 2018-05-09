@@ -1,0 +1,172 @@
+/*----------  Headers  ----------*/
+@function getHeadingFontSize($minFontSize, $maxFontSize, $heading) {
+  $m: ($minFontSize - $maxFontSize) / (6 - 1);
+  $c: $maxFontSize - $m;
+  @return $m * $heading + $c;
+}
+
+// Font size of headings
+@for $i from 1 through 6 {
+  h#{$i}, .h#{$i} {
+    font-size: rem(getHeadingFontSize(14px, 36px, $i));
+  }
+}
+
+/*----------  Font Sizes  ----------*/
+$number: 42;
+@for $i from 1 through $number {
+  .fz-#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+/*----------  Font Weight  ----------*/
+$font-weight: 300 400 500 600 700 800 900;
+@each $size in $font-weight {
+  .fw-#{$size} {
+    font-weight: #{$size};
+  }
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	font-weight: normal;
+	color: palette(brand, secondary);
+}
+
+.h4, .h5, .h6, h4, h5, h6 {
+	font-weight: 400;
+}
+
+h1{
+  font-size: em(42);
+  line-height: 1.5;
+  font-weight: 400;
+  color: palette(brand, primary);
+  margin-bottom: 50px;
+}
+
+h2{
+  font-size: em(36);
+  font-weight: 400;
+  color: palette(brand, primary);
+  margin-bottom: 19px;
+}
+
+h3 {
+  font-size: em(28);
+  font-weight: 400;
+  color: palette(brand, primary);
+  margin-bottom: 26px;
+}
+
+/*----------  Sub-headers  ----------*/
+.sub-header{
+  color: palette(brand, secondary);
+  font-size: em(14);
+  
+  &.medium{
+    font-size: em(18);
+  }
+
+  &.spaced{
+    letter-spacing: 0.15em;
+  }
+
+  &.light{
+    color: palette(brand, migrate)
+  }
+}
+
+/* ================ Begin: Title ================ */
+.heading{
+  margin-bottom: 40px;
+	color: palette(brand, secondary);
+	font-size: rem(45);
+	line-height: 1.2;
+  font-weight: 400;
+  margin-bottom: 30px;
+
+  @include max-screen(370px) {
+    font-size: rem(32); 
+  } 
+
+  /* Cores */
+  $colors: (
+    "primary": palette(brand, primary),
+    "secondary": palette(brand, secondary),
+    "contrast": palette(brand, contrast), 
+    "accent": palette(brand, accent),
+    "hightlight": palette(brand, hightlight),
+    "primary-light": palette(brand, primary-light),
+    "migrate": palette(brand, migrate),
+    "light": palette(brand, light),
+    "dark": palette(brand, dark)
+  );
+
+  @each $color-name, $color-code in $colors {
+    &.#{$color-name} {
+      color: $color-code; 
+    } 
+  }
+
+  /* Tamanhos */
+  $sizes: (
+    "small": em(24),
+    "medium": em(28),
+    "medium-x": em(30),
+    "large": em(44),
+    "big": em(65),
+    "huge": em(82),
+    "massive": em(130),
+  );
+
+  $sizesMobile: (
+    "small": em(20),
+    "medium": em(24),
+    "medium-x": em(26),
+    "large": em(34),
+    "big": em(45),
+    "huge": em(48),
+    "massive": em(56), 
+  );
+  
+  /* Responsivo */
+  @include min-screen(900px) {
+    
+    @each $size-name, $size-code in $sizes {
+      &.#{$size-name} {
+        font-size: $size-code; 
+      } 
+    }
+    
+    
+  }
+
+  @include max-screen(899px) { 
+    
+    @each $size-name, $size-code in $sizesMobile {
+      &.#{$size-name} {
+        font-size: $size-code; 
+      } 
+    }
+    
+    
+  }
+
+  /* Estilos */
+  &.spaced{
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 3.25em;
+    color: palette(brand, migrate);
+    letter-spacing: 0.5em;
+    margin: 0 0 33px;
+  }
+
+  &.middle-section{
+    transform: translateY(-53%);
+  }
+
+}
+/* ================= End: Title ================= */
